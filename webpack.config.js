@@ -2,11 +2,8 @@
 var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const DotenvPlugin = require('webpack-dotenv-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const HOST = process.env.HOST || "127.0.0.1";
@@ -14,7 +11,6 @@ const PORT = process.env.PORT || "8888";
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
     './src/index.js', // your app's entry point
   ],
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
@@ -73,14 +69,17 @@ module.exports = {
     host: HOST
   },
   plugins: [
-    new BundleAnalyzerPlugin(), // Turn this on when you want to analyze file size
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin({
-      filename: 'style.css',
-      allChunks: true
+    new webpack.HotModuleReplacementPlugin({
+        reportFilename: 'report.html',
+        statsFilename: 'stats.json'
     }),
-    new DashboardPlugin(),
-    new webpack.NamedModulesPlugin()
+    new UglifyJSPlugin(),
+    // new ExtractTextPlugin({
+    //   filename: 'style.css',
+    //   allChunks: true
+    // }),
+    new webpack.NamedModulesPlugin(),
+    new BundleAnalyzerPlugin() // Turn this on when you want to analyze file size
   ]
 };
