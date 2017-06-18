@@ -5,8 +5,9 @@
 // import 'ramda';
 // import 'classnames';
 // import 'moment';
+import 'preact';
 // import 'redux';
-import 'redux-persist';
+// import 'redux-persist';
 // import 'react-redux';
 // import 'redux-saga';
 // import 'react-router';
