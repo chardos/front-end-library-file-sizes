@@ -69,12 +69,17 @@ module.exports = {
     host: HOST
   },
   plugins: [
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"',
+    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin({
         reportFilename: 'report.html',
         statsFilename: 'stats.json'
     }),
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+        comments: false
+    }),
     // new ExtractTextPlugin({
     //   filename: 'style.css',
     //   allChunks: true

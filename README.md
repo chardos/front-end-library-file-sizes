@@ -10,6 +10,11 @@ All sizes are after minifying and gzipping.
 
 ---
 
+### form-serialize v0.7.2
+7.58kb
+
+---
+
 ### jQuery v3.2.1
 202.96kb
 

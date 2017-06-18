@@ -1,4 +1,5 @@
-import 'date-fns';
+// import 'date-fns';
+import 'form-serialize';
 // import 'jquery';
 // import 'react';
 // import 'ramda';
