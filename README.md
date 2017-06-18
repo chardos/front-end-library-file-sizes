@@ -9,8 +9,16 @@ All sizes are after minifying and gzipping.
 202.96kb
 
 ---
+
 ### Lodash v0.24.1  
 255.82kb
+
+---
+
+### moment v2.18.1  
+80.91kb
+
+Without removing locales: 285.32kb
 
 ---
 
