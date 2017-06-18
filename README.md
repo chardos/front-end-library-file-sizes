@@ -1,16 +1,21 @@
 All sizes are after minifying and gzipping.
 
+### classnames v2.2.5
+1.9kb
+
+---
+
 ### jQuery v3.2.1
 202.96kb
 
 ---
 ### Lodash v0.24.1  
-221.48kb
+255.82kb
 
 ---
 
 ### Ramda v0.24.1
-221.48kb
+222.66kb
 
 ---
 
