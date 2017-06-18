@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "2.6.1",
-  "hash": "94625d3521a4516ca546",
-  "time": 902,
+  "hash": "b1716abb12b75948142d",
+  "time": 1195,
   "publicPath": "/",
   "assetsByChunkName": {
     "main": "bundle.js"
@@ -11,7 +11,7 @@
   "assets": [
     {
       "name": "bundle.js",
-      "size": 32316,
+      "size": 106944,
       "chunks": [
         0
       ],
@@ -38,23 +38,891 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 9044,
+      "size": 28987,
       "names": [
         "main"
       ],
       "files": [
         "bundle.js"
       ],
-      "hash": "f566cc9ed4c922475962",
+      "hash": "a985c7a9c8c814110bd8",
       "parents": [],
       "modules": [
         {
-          "id": "./node_modules/form-serialize/index.js",
-          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/form-serialize/index.js",
-          "name": "./~/form-serialize/index.js",
-          "index": 2,
+          "id": "./node_modules/json-stringify-safe/stringify.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/json-stringify-safe/stringify.js",
+          "name": "./~/json-stringify-safe/stringify.js",
+          "index": 21,
+          "index2": 17,
+          "size": 907,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "issuerId": "./node_modules/redux-persist/es/createPersistor.js",
+          "issuerName": "./~/redux-persist/es/createPersistor.js",
+          "profile": {
+            "factory": 53,
+            "building": 6
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+              "module": "./~/redux-persist/es/createPersistor.js",
+              "moduleName": "./~/redux-persist/es/createPersistor.js",
+              "type": "harmony import",
+              "userRequest": "json-stringify-safe",
+              "loc": "4:0-44"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": null,
+          "depth": 4,
+          "source": "exports = module.exports = stringify\nexports.getSerialize = serializer\n\nfunction stringify(obj, replacer, spaces, cycleReplacer) {\n  return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces)\n}\n\nfunction serializer(replacer, cycleReplacer) {\n  var stack = [], keys = []\n\n  if (cycleReplacer == null) cycleReplacer = function(key, value) {\n    if (stack[0] === value) return \"[Circular ~]\"\n    return \"[Circular ~.\" + keys.slice(0, stack.indexOf(value)).join(\".\") + \"]\"\n  }\n\n  return function(key, value) {\n    if (stack.length > 0) {\n      var thisPos = stack.indexOf(this)\n      ~thisPos ? stack.splice(thisPos + 1) : stack.push(this)\n      ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key)\n      if (~stack.indexOf(value)) value = cycleReplacer.call(this, key, value)\n    }\n    else stack.push(value)\n\n    return replacer == null ? value : replacer.call(this, key, value)\n  }\n}\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_Symbol.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+          "name": "./~/lodash-es/_Symbol.js",
+          "index": 8,
+          "index2": 4,
+          "size": 116,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+          "issuerName": "./~/lodash-es/_baseGetTag.js",
+          "profile": {
+            "factory": 6,
+            "building": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+              "module": "./~/lodash-es/_baseGetTag.js",
+              "moduleName": "./~/lodash-es/_baseGetTag.js",
+              "type": "harmony import",
+              "userRequest": "./_Symbol.js",
+              "loc": "1:0-34"
+            },
+            {
+              "moduleId": "./node_modules/lodash-es/_getRawTag.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getRawTag.js",
+              "module": "./~/lodash-es/_getRawTag.js",
+              "moduleName": "./~/lodash-es/_getRawTag.js",
+              "type": "harmony import",
+              "userRequest": "./_Symbol.js",
+              "loc": "1:0-34"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 7,
+          "source": "import root from './_root.js';\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\nexport default Symbol;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_baseGetTag.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "name": "./~/lodash-es/_baseGetTag.js",
+          "index": 7,
+          "index2": 7,
+          "size": 790,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+          "issuerName": "./~/lodash-es/isPlainObject.js",
+          "profile": {
+            "factory": 4,
+            "building": 4
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+              "module": "./~/lodash-es/isPlainObject.js",
+              "moduleName": "./~/lodash-es/isPlainObject.js",
+              "type": "harmony import",
+              "userRequest": "./_baseGetTag.js",
+              "loc": "1:0-42"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 6,
+          "source": "import Symbol from './_Symbol.js';\nimport getRawTag from './_getRawTag.js';\nimport objectToString from './_objectToString.js';\n\n/** `Object#toString` result references. */\nvar nullTag = '[object Null]',\n    undefinedTag = '[object Undefined]';\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * The base implementation of `getTag` without fallbacks for buggy environments.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the `toStringTag`.\n */\nfunction baseGetTag(value) {\n  if (value == null) {\n    return value === undefined ? undefinedTag : nullTag;\n  }\n  return (symToStringTag && symToStringTag in Object(value))\n    ? getRawTag(value)\n    : objectToString(value);\n}\n\nexport default baseGetTag;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_freeGlobal.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_freeGlobal.js",
+          "name": "./~/lodash-es/_freeGlobal.js",
+          "index": 10,
+          "index2": 2,
+          "size": 171,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+          "issuerId": "./node_modules/lodash-es/_root.js",
+          "issuerName": "./~/lodash-es/_root.js",
+          "profile": {
+            "factory": 2,
+            "building": 3,
+            "dependencies": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_root.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+              "module": "./~/lodash-es/_root.js",
+              "moduleName": "./~/lodash-es/_root.js",
+              "type": "harmony import",
+              "userRequest": "./_freeGlobal.js",
+              "loc": "1:0-42"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 9,
+          "source": "/** Detect free variable `global` from Node.js. */\nvar freeGlobal = typeof global == 'object' && global && global.Object === Object && global;\n\nexport default freeGlobal;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/isPlainObject.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "name": "./~/lodash-es/isPlainObject.js",
+          "index": 6,
+          "index2": 11,
+          "size": 1648,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "issuerId": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "issuerName": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+          "profile": {
+            "factory": 29,
+            "building": 4
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+              "module": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+              "moduleName": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+              "type": "harmony import",
+              "userRequest": "lodash-es/isPlainObject",
+              "loc": "3:0-52"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 5,
+          "source": "import baseGetTag from './_baseGetTag.js';\nimport getPrototype from './_getPrototype.js';\nimport isObjectLike from './isObjectLike.js';\n\n/** `Object#toString` result references. */\nvar objectTag = '[object Object]';\n\n/** Used for built-in method references. */\nvar funcProto = Function.prototype,\n    objectProto = Object.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/** Used to infer the `Object` constructor. */\nvar objectCtorString = funcToString.call(Object);\n\n/**\n * Checks if `value` is a plain object, that is, an object created by the\n * `Object` constructor or one with a `[[Prototype]]` of `null`.\n *\n * @static\n * @memberOf _\n * @since 0.8.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.\n * @example\n *\n * function Foo() {\n *   this.a = 1;\n * }\n *\n * _.isPlainObject(new Foo);\n * // => false\n *\n * _.isPlainObject([1, 2, 3]);\n * // => false\n *\n * _.isPlainObject({ 'x': 0, 'y': 0 });\n * // => true\n *\n * _.isPlainObject(Object.create(null));\n * // => true\n */\nfunction isPlainObject(value) {\n  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {\n    return false;\n  }\n  var proto = getPrototype(value);\n  if (proto === null) {\n    return true;\n  }\n  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;\n  return typeof Ctor == 'function' && Ctor instanceof Ctor &&\n    funcToString.call(Ctor) == objectCtorString;\n}\n\nexport default isPlainObject;\n"
+        },
+        {
+          "id": 0,
+          "identifier": "multi ./src/index.js",
+          "name": "multi ./src/index.js",
+          "index": 0,
+          "index2": 24,
+          "size": 28,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "profile": {
+            "factory": 0,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "depth": 0
+        },
+        {
+          "id": "./node_modules/lodash-es/_getPrototype.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+          "name": "./~/lodash-es/_getPrototype.js",
+          "index": 14,
+          "index2": 9,
+          "size": 161,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+          "issuerName": "./~/lodash-es/isPlainObject.js",
+          "profile": {
+            "factory": 5,
+            "building": 6
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+              "module": "./~/lodash-es/isPlainObject.js",
+              "moduleName": "./~/lodash-es/isPlainObject.js",
+              "type": "harmony import",
+              "userRequest": "./_getPrototype.js",
+              "loc": "2:0-46"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 6,
+          "source": "import overArg from './_overArg.js';\n\n/** Built-in value references. */\nvar getPrototype = overArg(Object.getPrototypeOf, Object);\n\nexport default getPrototype;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_getRawTag.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getRawTag.js",
+          "name": "./~/lodash-es/_getRawTag.js",
+          "index": 12,
+          "index2": 5,
+          "size": 1137,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+          "issuerName": "./~/lodash-es/_baseGetTag.js",
+          "profile": {
+            "factory": 6,
+            "building": 5,
+            "dependencies": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+              "module": "./~/lodash-es/_baseGetTag.js",
+              "moduleName": "./~/lodash-es/_baseGetTag.js",
+              "type": "harmony import",
+              "userRequest": "./_getRawTag.js",
+              "loc": "2:0-40"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 7,
+          "source": "import Symbol from './_Symbol.js';\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the raw `toStringTag`.\n */\nfunction getRawTag(value) {\n  var isOwn = hasOwnProperty.call(value, symToStringTag),\n      tag = value[symToStringTag];\n\n  try {\n    value[symToStringTag] = undefined;\n    var unmasked = true;\n  } catch (e) {}\n\n  var result = nativeObjectToString.call(value);\n  if (unmasked) {\n    if (isOwn) {\n      value[symToStringTag] = tag;\n    } else {\n      delete value[symToStringTag];\n    }\n  }\n  return result;\n}\n\nexport default getRawTag;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_objectToString.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_objectToString.js",
+          "name": "./~/lodash-es/_objectToString.js",
+          "index": 13,
+          "index2": 6,
+          "size": 563,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+          "issuerName": "./~/lodash-es/_baseGetTag.js",
+          "profile": {
+            "factory": 6,
+            "building": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+              "module": "./~/lodash-es/_baseGetTag.js",
+              "moduleName": "./~/lodash-es/_baseGetTag.js",
+              "type": "harmony import",
+              "userRequest": "./_objectToString.js",
+              "loc": "3:0-50"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 7,
+          "source": "/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/**\n * Converts `value` to a string using `Object.prototype.toString`.\n *\n * @private\n * @param {*} value The value to convert.\n * @returns {string} Returns the converted string.\n */\nfunction objectToString(value) {\n  return nativeObjectToString.call(value);\n}\n\nexport default objectToString;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_overArg.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_overArg.js",
+          "name": "./~/lodash-es/_overArg.js",
+          "index": 15,
+          "index2": 8,
+          "size": 380,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+          "issuerId": "./node_modules/lodash-es/_getPrototype.js",
+          "issuerName": "./~/lodash-es/_getPrototype.js",
+          "profile": {
+            "factory": 4,
+            "building": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_getPrototype.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+              "module": "./~/lodash-es/_getPrototype.js",
+              "moduleName": "./~/lodash-es/_getPrototype.js",
+              "type": "harmony import",
+              "userRequest": "./_overArg.js",
+              "loc": "1:0-36"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 7,
+          "source": "/**\n * Creates a unary function that invokes `func` with its argument transformed.\n *\n * @private\n * @param {Function} func The function to wrap.\n * @param {Function} transform The argument transform.\n * @returns {Function} Returns the new function.\n */\nfunction overArg(func, transform) {\n  return function(arg) {\n    return func(transform(arg));\n  };\n}\n\nexport default overArg;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/_root.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+          "name": "./~/lodash-es/_root.js",
+          "index": 9,
+          "index2": 3,
+          "size": 298,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+          "issuerId": "./node_modules/lodash-es/_Symbol.js",
+          "issuerName": "./~/lodash-es/_Symbol.js",
+          "profile": {
+            "factory": 5,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/_Symbol.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+              "module": "./~/lodash-es/_Symbol.js",
+              "moduleName": "./~/lodash-es/_Symbol.js",
+              "type": "harmony import",
+              "userRequest": "./_root.js",
+              "loc": "1:0-30"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 8,
+          "source": "import freeGlobal from './_freeGlobal.js';\n\n/** Detect free variable `self`. */\nvar freeSelf = typeof self == 'object' && self && self.Object === Object && self;\n\n/** Used as a reference to the global object. */\nvar root = freeGlobal || freeSelf || Function('return this')();\n\nexport default root;\n"
+        },
+        {
+          "id": "./node_modules/lodash-es/isObjectLike.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isObjectLike.js",
+          "name": "./~/lodash-es/isObjectLike.js",
+          "index": 16,
+          "index2": 10,
+          "size": 612,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+          "issuerName": "./~/lodash-es/isPlainObject.js",
+          "profile": {
+            "factory": 6,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+              "module": "./~/lodash-es/isPlainObject.js",
+              "moduleName": "./~/lodash-es/isPlainObject.js",
+              "type": "harmony import",
+              "userRequest": "./isObjectLike.js",
+              "loc": "3:0-45"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 6,
+          "source": "/**\n * Checks if `value` is object-like. A value is object-like if it's not `null`\n * and has a `typeof` result of \"object\".\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is object-like, else `false`.\n * @example\n *\n * _.isObjectLike({});\n * // => true\n *\n * _.isObjectLike([1, 2, 3]);\n * // => true\n *\n * _.isObjectLike(_.noop);\n * // => false\n *\n * _.isObjectLike(null);\n * // => false\n */\nfunction isObjectLike(value) {\n  return value != null && typeof value == 'object';\n}\n\nexport default isObjectLike;\n"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/autoRehydrate.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+          "name": "./~/redux-persist/es/autoRehydrate.js",
+          "index": 3,
+          "index2": 13,
+          "size": 3580,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 8,
+            "building": 37,
+            "dependencies": 43
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./autoRehydrate",
+              "loc": "1:0-44"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { REHYDRATE } from './constants';\nimport isStatePlainEnough from './utils/isStatePlainEnough';\n\nexport default function autoRehydrate() {\n  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};\n\n  var stateReconciler = config.stateReconciler || defaultStateReconciler;\n\n  return function (next) {\n    return function (reducer, initialState, enhancer) {\n      var store = next(liftReducer(reducer), initialState, enhancer);\n      return _extends({}, store, {\n        replaceReducer: function replaceReducer(reducer) {\n          return store.replaceReducer(liftReducer(reducer));\n        }\n      });\n    };\n  };\n\n  function liftReducer(reducer) {\n    var rehydrated = false;\n    var preRehydrateActions = [];\n    return function (state, action) {\n      if (action.type !== REHYDRATE) {\n        if (config.log && !rehydrated) preRehydrateActions.push(action); // store pre-rehydrate actions for debugging\n        return reducer(state, action);\n      } else {\n        if (config.log && !rehydrated) logPreRehydrate(preRehydrateActions);\n        rehydrated = true;\n\n        var inboundState = action.payload;\n        var reducedState = reducer(state, action);\n\n        return stateReconciler(state, inboundState, reducedState, config.log);\n      }\n    };\n  }\n}\n\nfunction logPreRehydrate(preRehydrateActions) {\n  var concernedActions = preRehydrateActions.slice(1);\n  if (concernedActions.length > 0) {\n    console.log('\\n      redux-persist/autoRehydrate: %d actions were fired before rehydration completed. This can be a symptom of a race\\n      condition where the rehydrate action may overwrite the previously affected state. Consider running these actions\\n      after rehydration:\\n    ', concernedActions.length, concernedActions);\n  }\n}\n\nfunction defaultStateReconciler(state, inboundState, reducedState, log) {\n  var newState = _extends({}, reducedState);\n\n  Object.keys(inboundState).forEach(function (key) {\n    // if initialState does not have key, skip auto rehydration\n    if (!state.hasOwnProperty(key)) return;\n\n    // if initial state is an object but inbound state is null/undefined, skip\n    if (_typeof(state[key]) === 'object' && !inboundState[key]) {\n      if (log) console.log('redux-persist/autoRehydrate: sub state for key `%s` is falsy but initial state is an object, skipping autoRehydrate.', key);\n      return;\n    }\n\n    // if reducer modifies substate, skip auto rehydration\n    if (state[key] !== reducedState[key]) {\n      if (log) console.log('redux-persist/autoRehydrate: sub state for key `%s` modified, skipping autoRehydrate.', key);\n      newState[key] = reducedState[key];\n      return;\n    }\n\n    // otherwise take the inboundState\n    if (isStatePlainEnough(inboundState[key]) && isStatePlainEnough(state[key])) newState[key] = _extends({}, state[key], inboundState[key]); // shallow merge\n    else newState[key] = inboundState[key]; // hard set\n\n    if (log) console.log('redux-persist/autoRehydrate: key `%s`, rehydrated to ', key, newState[key]);\n  });\n  return newState;\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/constants.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/constants.js",
+          "name": "./~/redux-persist/es/constants.js",
+          "index": 4,
           "index2": 0,
-          "size": 8714,
+          "size": 84,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+          "issuerId": "./node_modules/redux-persist/es/getStoredState.js",
+          "issuerName": "./~/redux-persist/es/getStoredState.js",
+          "profile": {
+            "factory": 55,
+            "building": 10
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/getStoredState.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+              "module": "./~/redux-persist/es/getStoredState.js",
+              "moduleName": "./~/redux-persist/es/getStoredState.js",
+              "type": "harmony import",
+              "userRequest": "./constants",
+              "loc": "3:0-41"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/autoRehydrate.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+              "module": "./~/redux-persist/es/autoRehydrate.js",
+              "moduleName": "./~/redux-persist/es/autoRehydrate.js",
+              "type": "harmony import",
+              "userRequest": "./constants",
+              "loc": "5:0-40"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+              "module": "./~/redux-persist/es/createPersistor.js",
+              "moduleName": "./~/redux-persist/es/createPersistor.js",
+              "type": "harmony import",
+              "userRequest": "./constants",
+              "loc": "1:0-52"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+              "module": "./~/redux-persist/es/persistStore.js",
+              "moduleName": "./~/redux-persist/es/persistStore.js",
+              "type": "harmony import",
+              "userRequest": "./constants",
+              "loc": "3:0-40"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/purgeStoredState.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/purgeStoredState.js",
+              "module": "./~/redux-persist/es/purgeStoredState.js",
+              "moduleName": "./~/redux-persist/es/purgeStoredState.js",
+              "type": "harmony import",
+              "userRequest": "./constants",
+              "loc": "1:0-41"
+            }
+          ],
+          "usedExports": [
+            "KEY_PREFIX",
+            "REHYDRATE"
+          ],
+          "providedExports": [
+            "KEY_PREFIX",
+            "REHYDRATE"
+          ],
+          "depth": 4,
+          "source": "export var KEY_PREFIX = 'reduxPersist:';\nexport var REHYDRATE = 'persist/REHYDRATE';"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/createPersistor.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "name": "./~/redux-persist/es/createPersistor.js",
+          "index": 17,
+          "index2": 18,
+          "size": 4918,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 9,
+            "building": 61,
+            "dependencies": 22
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./createPersistor",
+              "loc": "2:0-48"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+              "module": "./~/redux-persist/es/persistStore.js",
+              "moduleName": "./~/redux-persist/es/persistStore.js",
+              "type": "harmony import",
+              "userRequest": "./createPersistor",
+              "loc": "5:0-48"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "import { KEY_PREFIX, REHYDRATE } from './constants';\nimport createAsyncLocalStorage from './defaults/asyncLocalStorage';\nimport purgeStoredState from './purgeStoredState';\nimport stringify from 'json-stringify-safe';\n\nexport default function createPersistor(store, config) {\n  // defaults\n  var serializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultSerializer;\n  var deserializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultDeserializer;\n  var blacklist = config.blacklist || [];\n  var whitelist = config.whitelist || false;\n  var transforms = config.transforms || [];\n  var debounce = config.debounce || false;\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // pluggable state shape (e.g. immutablejs)\n  var stateInit = config._stateInit || {};\n  var stateIterator = config._stateIterator || defaultStateIterator;\n  var stateGetter = config._stateGetter || defaultStateGetter;\n  var stateSetter = config._stateSetter || defaultStateSetter;\n\n  // storage with keys -> getAllKeys for localForage support\n  var storage = config.storage || createAsyncLocalStorage('local');\n  if (storage.keys && !storage.getAllKeys) {\n    storage.getAllKeys = storage.keys;\n  }\n\n  // initialize stateful values\n  var lastState = stateInit;\n  var paused = false;\n  var storesToProcess = [];\n  var timeIterator = null;\n\n  store.subscribe(function () {\n    if (paused) return;\n\n    var state = store.getState();\n\n    stateIterator(state, function (subState, key) {\n      if (!passWhitelistBlacklist(key)) return;\n      if (stateGetter(lastState, key) === stateGetter(state, key)) return;\n      if (storesToProcess.indexOf(key) !== -1) return;\n      storesToProcess.push(key);\n    });\n\n    // time iterator (read: debounce)\n    if (timeIterator === null) {\n      timeIterator = setInterval(function () {\n        if (storesToProcess.length === 0) {\n          clearInterval(timeIterator);\n          timeIterator = null;\n          return;\n        }\n\n        var key = storesToProcess.shift();\n        var storageKey = createStorageKey(key);\n        var endState = transforms.reduce(function (subState, transformer) {\n          return transformer.in(subState, key);\n        }, stateGetter(store.getState(), key));\n        if (typeof endState !== 'undefined') storage.setItem(storageKey, serializer(endState), warnIfSetError(key));\n      }, debounce);\n    }\n\n    lastState = state;\n  });\n\n  function passWhitelistBlacklist(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return false;\n    if (blacklist.indexOf(key) !== -1) return false;\n    return true;\n  }\n\n  function adhocRehydrate(incoming) {\n    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n\n    var state = {};\n    if (options.serial) {\n      stateIterator(incoming, function (subState, key) {\n        try {\n          var data = deserializer(subState);\n          var value = transforms.reduceRight(function (interState, transformer) {\n            return transformer.out(interState, key);\n          }, data);\n          state = stateSetter(state, key, value);\n        } catch (err) {\n          if (process.env.NODE_ENV !== 'production') console.warn('Error rehydrating data for key \"' + key + '\"', subState, err);\n        }\n      });\n    } else state = incoming;\n\n    store.dispatch(rehydrateAction(state));\n    return state;\n  }\n\n  function createStorageKey(key) {\n    return '' + keyPrefix + key;\n  }\n\n  // return `persistor`\n  return {\n    rehydrate: adhocRehydrate,\n    pause: function pause() {\n      paused = true;\n    },\n    resume: function resume() {\n      paused = false;\n    },\n    purge: function purge(keys) {\n      return purgeStoredState({ storage: storage, keyPrefix: keyPrefix }, keys);\n    }\n  };\n}\n\nfunction warnIfSetError(key) {\n  return function setError(err) {\n    if (err && process.env.NODE_ENV !== 'production') {\n      console.warn('Error storing data for key:', key, err);\n    }\n  };\n}\n\nfunction defaultSerializer(data) {\n  return stringify(data, null, null, function (k, v) {\n    if (process.env.NODE_ENV !== 'production') return null;\n    throw new Error('\\n      redux-persist: cannot process cyclical state.\\n      Consider changing your state structure to have no cycles.\\n      Alternatively blacklist the corresponding reducer key.\\n      Cycle encounted at key \"' + k + '\" with value \"' + v + '\".\\n    ');\n  });\n}\n\nfunction defaultDeserializer(serial) {\n  return JSON.parse(serial);\n}\n\nfunction rehydrateAction(data) {\n  return {\n    type: REHYDRATE,\n    payload: data\n  };\n}\n\nfunction defaultStateIterator(collection, callback) {\n  return Object.keys(collection).forEach(function (key) {\n    return callback(collection[key], key);\n  });\n}\n\nfunction defaultStateGetter(state, key) {\n  return state[key];\n}\n\nfunction defaultStateSetter(state, key, value) {\n  state[key] = value;\n  return state;\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/createTransform.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createTransform.js",
+          "name": "./~/redux-persist/es/createTransform.js",
+          "index": 22,
+          "index2": 19,
+          "size": 724,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 9,
+            "building": 63
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./createTransform",
+              "loc": "3:0-48"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "function createTransform(inbound, outbound) {\n  var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};\n\n  var whitelist = config.whitelist || null;\n  var blacklist = config.blacklist || null;\n\n  function whitelistBlacklistCheck(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return true;\n    if (blacklist && blacklist.indexOf(key) !== -1) return true;\n    return false;\n  }\n\n  return {\n    in: function _in(state, key) {\n      return !whitelistBlacklistCheck(key) && inbound ? inbound(state, key) : state;\n    },\n    out: function out(state, key) {\n      return !whitelistBlacklistCheck(key) && outbound ? outbound(state, key) : state;\n    }\n  };\n}\n\nexport default createTransform;"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+          "name": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+          "index": 18,
+          "index2": 15,
+          "size": 3459,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+          "issuerId": "./node_modules/redux-persist/es/getStoredState.js",
+          "issuerName": "./~/redux-persist/es/getStoredState.js",
+          "profile": {
+            "factory": 59,
+            "building": 27,
+            "dependencies": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/getStoredState.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+              "module": "./~/redux-persist/es/getStoredState.js",
+              "moduleName": "./~/redux-persist/es/getStoredState.js",
+              "type": "harmony import",
+              "userRequest": "./defaults/asyncLocalStorage",
+              "loc": "4:0-67"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+              "module": "./~/redux-persist/es/createPersistor.js",
+              "moduleName": "./~/redux-persist/es/createPersistor.js",
+              "type": "harmony import",
+              "userRequest": "./defaults/asyncLocalStorage",
+              "loc": "2:0-67"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 4,
+          "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nimport setImmediate from '../utils/setImmediate';\n\nvar noStorage = function noStorage() {\n  /* noop */return null;\n};\nif (process.env.NODE_ENV !== 'production') {\n  noStorage = function noStorage() {\n    console.error('redux-persist asyncLocalStorage requires a global localStorage object. Either use a different storage backend or if this is a universal redux application you probably should conditionally persist like so: https://gist.github.com/rt2zz/ac9eb396793f95ff3c3b');\n    return null;\n  };\n}\n\nfunction _hasStorage(storageType) {\n  if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) !== 'object' || !(storageType in window)) {\n    return false;\n  }\n\n  try {\n    var storage = window[storageType];\n    var testKey = 'redux-persist ' + storageType + ' test';\n    storage.setItem(testKey, 'test');\n    storage.getItem(testKey);\n    storage.removeItem(testKey);\n  } catch (e) {\n    if (process.env.NODE_ENV !== 'production') console.warn('redux-persist ' + storageType + ' test failed, persistence will be disabled.');\n    return false;\n  }\n  return true;\n}\n\nfunction hasLocalStorage() {\n  return _hasStorage('localStorage');\n}\n\nfunction hasSessionStorage() {\n  return _hasStorage('sessionStorage');\n}\n\nfunction getStorage(type) {\n  if (type === 'local') {\n    return hasLocalStorage() ? window.localStorage : { getItem: noStorage, setItem: noStorage, removeItem: noStorage, getAllKeys: noStorage };\n  }\n  if (type === 'session') {\n    return hasSessionStorage() ? window.sessionStorage : { getItem: noStorage, setItem: noStorage, removeItem: noStorage, getAllKeys: noStorage };\n  }\n}\n\nexport default function (type, config) {\n  var storage = getStorage(type);\n  return {\n    getAllKeys: function getAllKeys(cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          var keys = [];\n          for (var i = 0; i < storage.length; i++) {\n            keys.push(storage.key(i));\n          }\n          setImmediate(function () {\n            cb && cb(null, keys);\n            resolve(keys);\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    getItem: function getItem(key, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          var s = storage.getItem(key);\n          setImmediate(function () {\n            cb && cb(null, s);\n            resolve(s);\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    setItem: function setItem(key, string, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          storage.setItem(key, string);\n          setImmediate(function () {\n            cb && cb(null);\n            resolve();\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    removeItem: function removeItem(key, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          storage.removeItem(key);\n          setImmediate(function () {\n            cb && cb(null);\n            resolve();\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    }\n  };\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/getStoredState.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+          "name": "./~/redux-persist/es/getStoredState.js",
+          "index": 23,
+          "index2": 20,
+          "size": 3163,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 10,
+            "building": 23
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./getStoredState",
+              "loc": "4:0-46"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+              "module": "./~/redux-persist/es/persistStore.js",
+              "moduleName": "./~/redux-persist/es/persistStore.js",
+              "type": "harmony import",
+              "userRequest": "./getStoredState",
+              "loc": "4:0-46"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { KEY_PREFIX } from './constants';\nimport createAsyncLocalStorage from './defaults/asyncLocalStorage';\n\nexport default function getStoredState(config, onComplete) {\n  var storage = config.storage || createAsyncLocalStorage('local');\n  var deserializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultDeserializer;\n  var blacklist = config.blacklist || [];\n  var whitelist = config.whitelist || false;\n  var transforms = config.transforms || [];\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // fallback getAllKeys to `keys` if present (LocalForage compatability)\n  if (storage.keys && !storage.getAllKeys) storage = _extends({}, storage, { getAllKeys: storage.keys });\n\n  var restoredState = {};\n  var completionCount = 0;\n\n  storage.getAllKeys(function (err, allKeys) {\n    if (err) {\n      if (process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error in storage.getAllKeys');\n      complete(err);\n    }\n\n    var persistKeys = allKeys.filter(function (key) {\n      return key.indexOf(keyPrefix) === 0;\n    }).map(function (key) {\n      return key.slice(keyPrefix.length);\n    });\n    var keysToRestore = persistKeys.filter(passWhitelistBlacklist);\n\n    var restoreCount = keysToRestore.length;\n    if (restoreCount === 0) complete(null, restoredState);\n    keysToRestore.forEach(function (key) {\n      storage.getItem(createStorageKey(key), function (err, serialized) {\n        if (err && process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error restoring data for key:', key, err);else restoredState[key] = rehydrate(key, serialized);\n        completionCount += 1;\n        if (completionCount === restoreCount) complete(null, restoredState);\n      });\n    });\n  });\n\n  function rehydrate(key, serialized) {\n    var state = null;\n\n    try {\n      var data = deserializer(serialized);\n      state = transforms.reduceRight(function (subState, transformer) {\n        return transformer.out(subState, key);\n      }, data);\n    } catch (err) {\n      if (process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error restoring data for key:', key, err);\n    }\n\n    return state;\n  }\n\n  function complete(err, restoredState) {\n    onComplete(err, restoredState);\n  }\n\n  function passWhitelistBlacklist(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return false;\n    if (blacklist.indexOf(key) !== -1) return false;\n    return true;\n  }\n\n  function createStorageKey(key) {\n    return '' + keyPrefix + key;\n  }\n\n  if (typeof onComplete !== 'function' && !!Promise) {\n    return new Promise(function (resolve, reject) {\n      onComplete = function onComplete(err, restoredState) {\n        if (err) reject(err);else resolve(restoredState);\n      };\n    });\n  }\n}\n\nfunction defaultDeserializer(serial) {\n  return JSON.parse(serial);\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/index.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "name": "./~/redux-persist/es/index.js",
+          "index": 2,
+          "index2": 22,
+          "size": 978,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -67,8 +935,8 @@
           "issuerId": "./src/index.js",
           "issuerName": "./src/index.js",
           "profile": {
-            "factory": 9,
-            "building": 25
+            "factory": 15,
+            "building": 26
           },
           "failed": false,
           "errors": 0,
@@ -80,22 +948,278 @@
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
               "type": "harmony import",
-              "userRequest": "form-serialize",
-              "loc": "2:0-24"
+              "userRequest": "redux-persist",
+              "loc": "9:0-23"
             }
           ],
           "usedExports": false,
-          "providedExports": null,
+          "providedExports": [
+            "autoRehydrate",
+            "createPersistor",
+            "createTransform",
+            "getStoredState",
+            "persistStore",
+            "purgeStoredState",
+            "storages"
+          ],
           "depth": 2,
-          "source": "// get successful control from form and assemble into object\n// http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2\n\n// types which indicate a submit action and are not successful controls\n// these will be ignored\nvar k_r_submitter = /^(?:submit|button|image|reset|file)$/i;\n\n// node names which could be successful controls\nvar k_r_success_contrls = /^(?:input|select|textarea|keygen)/i;\n\n// Matches bracket notation.\nvar brackets = /(\\[[^\\[\\]]*\\])/g;\n\n// serializes form fields\n// @param form MUST be an HTMLForm element\n// @param options is an optional argument to configure the serialization. Default output\n// with no options specified is a url encoded string\n//    - hash: [true | false] Configure the output type. If true, the output will\n//    be a js object.\n//    - serializer: [function] Optional serializer function to override the default one.\n//    The function takes 3 arguments (result, key, value) and should return new result\n//    hash and url encoded str serializers are provided with this module\n//    - disabled: [true | false]. If true serialize disabled fields.\n//    - empty: [true | false]. If true serialize empty fields\nfunction serialize(form, options) {\n    if (typeof options != 'object') {\n        options = { hash: !!options };\n    }\n    else if (options.hash === undefined) {\n        options.hash = true;\n    }\n\n    var result = (options.hash) ? {} : '';\n    var serializer = options.serializer || ((options.hash) ? hash_serializer : str_serialize);\n\n    var elements = form && form.elements ? form.elements : [];\n\n    //Object store each radio and set if it's empty or not\n    var radio_store = Object.create(null);\n\n    for (var i=0 ; i<elements.length ; ++i) {\n        var element = elements[i];\n\n        // ingore disabled fields\n        if ((!options.disabled && element.disabled) || !element.name) {\n            continue;\n        }\n        // ignore anyhting that is not considered a success field\n        if (!k_r_success_contrls.test(element.nodeName) ||\n            k_r_submitter.test(element.type)) {\n            continue;\n        }\n\n        var key = element.name;\n        var val = element.value;\n\n        // we can't just use element.value for checkboxes cause some browsers lie to us\n        // they say \"on\" for value when the box isn't checked\n        if ((element.type === 'checkbox' || element.type === 'radio') && !element.checked) {\n            val = undefined;\n        }\n\n        // If we want empty elements\n        if (options.empty) {\n            // for checkbox\n            if (element.type === 'checkbox' && !element.checked) {\n                val = '';\n            }\n\n            // for radio\n            if (element.type === 'radio') {\n                if (!radio_store[element.name] && !element.checked) {\n                    radio_store[element.name] = false;\n                }\n                else if (element.checked) {\n                    radio_store[element.name] = true;\n                }\n            }\n\n            // if options empty is true, continue only if its radio\n            if (val == undefined && element.type == 'radio') {\n                continue;\n            }\n        }\n        else {\n            // value-less fields are ignored unless options.empty is true\n            if (!val) {\n                continue;\n            }\n        }\n\n        // multi select boxes\n        if (element.type === 'select-multiple') {\n            val = [];\n\n            var selectOptions = element.options;\n            var isSelectedOptions = false;\n            for (var j=0 ; j<selectOptions.length ; ++j) {\n                var option = selectOptions[j];\n                var allowedEmpty = options.empty && !option.value;\n                var hasValue = (option.value || allowedEmpty);\n                if (option.selected && hasValue) {\n                    isSelectedOptions = true;\n\n                    // If using a hash serializer be sure to add the\n                    // correct notation for an array in the multi-select\n                    // context. Here the name attribute on the select element\n                    // might be missing the trailing bracket pair. Both names\n                    // \"foo\" and \"foo[]\" should be arrays.\n                    if (options.hash && key.slice(key.length - 2) !== '[]') {\n                        result = serializer(result, key + '[]', option.value);\n                    }\n                    else {\n                        result = serializer(result, key, option.value);\n                    }\n                }\n            }\n\n            // Serialize if no selected options and options.empty is true\n            if (!isSelectedOptions && options.empty) {\n                result = serializer(result, key, '');\n            }\n\n            continue;\n        }\n\n        result = serializer(result, key, val);\n    }\n\n    // Check for all empty radio buttons and serialize them with key=\"\"\n    if (options.empty) {\n        for (var key in radio_store) {\n            if (!radio_store[key]) {\n                result = serializer(result, key, '');\n            }\n        }\n    }\n\n    return result;\n}\n\nfunction parse_keys(string) {\n    var keys = [];\n    var prefix = /^([^\\[\\]]*)/;\n    var children = new RegExp(brackets);\n    var match = prefix.exec(string);\n\n    if (match[1]) {\n        keys.push(match[1]);\n    }\n\n    while ((match = children.exec(string)) !== null) {\n        keys.push(match[1]);\n    }\n\n    return keys;\n}\n\nfunction hash_assign(result, keys, value) {\n    if (keys.length === 0) {\n        result = value;\n        return result;\n    }\n\n    var key = keys.shift();\n    var between = key.match(/^\\[(.+?)\\]$/);\n\n    if (key === '[]') {\n        result = result || [];\n\n        if (Array.isArray(result)) {\n            result.push(hash_assign(null, keys, value));\n        }\n        else {\n            // This might be the result of bad name attributes like \"[][foo]\",\n            // in this case the original `result` object will already be\n            // assigned to an object literal. Rather than coerce the object to\n            // an array, or cause an exception the attribute \"_values\" is\n            // assigned as an array.\n            result._values = result._values || [];\n            result._values.push(hash_assign(null, keys, value));\n        }\n\n        return result;\n    }\n\n    // Key is an attribute name and can be assigned directly.\n    if (!between) {\n        result[key] = hash_assign(result[key], keys, value);\n    }\n    else {\n        var string = between[1];\n        // +var converts the variable into a number\n        // better than parseInt because it doesn't truncate away trailing\n        // letters and actually fails if whole thing is not a number\n        var index = +string;\n\n        // If the characters between the brackets is not a number it is an\n        // attribute name and can be assigned directly.\n        if (isNaN(index)) {\n            result = result || {};\n            result[string] = hash_assign(result[string], keys, value);\n        }\n        else {\n            result = result || [];\n            result[index] = hash_assign(result[index], keys, value);\n        }\n    }\n\n    return result;\n}\n\n// Object/hash encoding serializer.\nfunction hash_serializer(result, key, value) {\n    var matches = key.match(brackets);\n\n    // Has brackets? Use the recursive assignment function to walk the keys,\n    // construct any missing objects in the result tree and make the assignment\n    // at the end of the chain.\n    if (matches) {\n        var keys = parse_keys(key);\n        hash_assign(result, keys, value);\n    }\n    else {\n        // Non bracket notation can make assignments directly.\n        var existing = result[key];\n\n        // If the value has been assigned already (for instance when a radio and\n        // a checkbox have the same name attribute) convert the previous value\n        // into an array before pushing into it.\n        //\n        // NOTE: If this requirement were removed all hash creation and\n        // assignment could go through `hash_assign`.\n        if (existing) {\n            if (!Array.isArray(existing)) {\n                result[key] = [ existing ];\n            }\n\n            result[key].push(value);\n        }\n        else {\n            result[key] = value;\n        }\n    }\n\n    return result;\n}\n\n// urlform encoding serializer\nfunction str_serialize(result, key, value) {\n    // encode newlines as \\r\\n cause the html spec says so\n    value = value.replace(/(\\r)?\\n/g, '\\r\\n');\n    value = encodeURIComponent(value);\n\n    // spaces should be '+' rather than '%20'.\n    value = value.replace(/%20/g, '+');\n    return result + (result ? '&' : '') + encodeURIComponent(key) + '=' + value;\n}\n\nmodule.exports = serialize;\n"
+          "source": "import autoRehydrate from './autoRehydrate';\nimport createPersistor from './createPersistor';\nimport createTransform from './createTransform';\nimport getStoredState from './getStoredState';\nimport persistStore from './persistStore';\nimport purgeStoredState from './purgeStoredState';\n\n// @TODO remove in v5\nvar deprecated = function deprecated(cb, cb2, cb3) {\n  console.error('redux-persist: this method of importing storages has been removed. instead use `import { asyncLocalStorage } from \"redux-persist/storages\"`');\n  if (typeof cb === 'function') cb();\n  if (typeof cb2 === 'function') cb2();\n  if (typeof cb3 === 'function') cb3();\n};\nvar deprecatedStorage = { getAllKeys: deprecated, getItem: deprecated, setItem: deprecated, removeItem: deprecated };\nvar storages = {\n  asyncLocalStorage: deprecatedStorage,\n  asyncSessionStorage: deprecatedStorage\n};\n\nexport { autoRehydrate, createPersistor, createTransform, getStoredState, persistStore, purgeStoredState, storages };"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/persistStore.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "name": "./~/redux-persist/es/persistStore.js",
+          "index": 24,
+          "index2": 21,
+          "size": 2092,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 10,
+            "building": 65,
+            "dependencies": 13
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./persistStore",
+              "loc": "5:0-42"
+            }
+          ],
+          "usedExports": false,
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { REHYDRATE } from './constants';\nimport getStoredState from './getStoredState';\nimport createPersistor from './createPersistor';\nimport setImmediate from './utils/setImmediate';\n\nexport default function persistStore(store) {\n  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n  var onComplete = arguments[2];\n\n  // defaults\n  // @TODO remove shouldRestore\n  var shouldRestore = !config.skipRestore;\n  if (process.env.NODE_ENV !== 'production' && config.skipRestore) console.warn('redux-persist: config.skipRestore has been deprecated. If you want to skip restoration use `createPersistor` instead');\n\n  var purgeKeys = null;\n\n  // create and pause persistor\n  var persistor = createPersistor(store, config);\n  persistor.pause();\n\n  // restore\n  if (shouldRestore) {\n    setImmediate(function () {\n      getStoredState(config, function (err, restoredState) {\n        if (err) {\n          complete(err);\n          return;\n        }\n        // do not persist state for purgeKeys\n        if (purgeKeys) {\n          if (purgeKeys === '*') restoredState = {};else purgeKeys.forEach(function (key) {\n            return delete restoredState[key];\n          });\n        }\n\n        store.dispatch(rehydrateAction(restoredState, err));\n        complete(err, restoredState);\n      });\n    });\n  } else setImmediate(complete);\n\n  function complete(err, restoredState) {\n    persistor.resume();\n    onComplete && onComplete(err, restoredState);\n  }\n\n  return _extends({}, persistor, {\n    purge: function purge(keys) {\n      purgeKeys = keys || '*';\n      return persistor.purge(keys);\n    }\n  });\n}\n\nfunction rehydrateAction(payload) {\n  var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;\n\n  return {\n    type: REHYDRATE,\n    payload: payload,\n    error: error\n  };\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/purgeStoredState.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/purgeStoredState.js",
+          "name": "./~/redux-persist/es/purgeStoredState.js",
+          "index": 20,
+          "index2": 16,
+          "size": 1540,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "issuerId": "./node_modules/redux-persist/es/index.js",
+          "issuerName": "./~/redux-persist/es/index.js",
+          "profile": {
+            "factory": 11,
+            "building": 72,
+            "dependencies": 5
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/index.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+              "module": "./~/redux-persist/es/index.js",
+              "moduleName": "./~/redux-persist/es/index.js",
+              "type": "harmony import",
+              "userRequest": "./purgeStoredState",
+              "loc": "6:0-50"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+              "module": "./~/redux-persist/es/createPersistor.js",
+              "moduleName": "./~/redux-persist/es/createPersistor.js",
+              "type": "harmony import",
+              "userRequest": "./purgeStoredState",
+              "loc": "3:0-50"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 3,
+          "source": "import { KEY_PREFIX } from './constants';\n\nexport default function purgeStoredState(config, keys) {\n  var storage = config.storage;\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // basic validation\n  if (Array.isArray(config)) throw new Error('redux-persist: purgeStoredState requires config as a first argument (found array). An array of keys is the optional second argument.');\n  if (!storage) throw new Error('redux-persist: config.storage required in purgeStoredState');\n\n  if (typeof keys === 'undefined') {\n    // if keys is not defined, purge all keys\n    return new Promise(function (resolve, reject) {\n      storage.getAllKeys(function (err, allKeys) {\n        if (err) {\n          if (process.env.NODE_ENV !== 'production') console.warn('redux-persist: error during purgeStoredState in storage.getAllKeys');\n          reject(err);\n        } else {\n          resolve(purgeStoredState(config, allKeys.filter(function (key) {\n            return key.indexOf(keyPrefix) === 0;\n          }).map(function (key) {\n            return key.slice(keyPrefix.length);\n          })));\n        }\n      });\n    });\n  } else {\n    // otherwise purge specified keys\n    return Promise.all(keys.map(function (key) {\n      return storage.removeItem('' + keyPrefix + key, warnIfRemoveError(key));\n    }));\n  }\n}\n\nfunction warnIfRemoveError(key) {\n  return function removeError(err) {\n    if (err && process.env.NODE_ENV !== 'production') {\n      console.warn('Error storing data for key:', key, err);\n    }\n  };\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "name": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+          "index": 5,
+          "index2": 12,
+          "size": 640,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+          "issuerId": "./node_modules/redux-persist/es/autoRehydrate.js",
+          "issuerName": "./~/redux-persist/es/autoRehydrate.js",
+          "profile": {
+            "factory": 48,
+            "building": 7
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/autoRehydrate.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+              "module": "./~/redux-persist/es/autoRehydrate.js",
+              "moduleName": "./~/redux-persist/es/autoRehydrate.js",
+              "type": "harmony import",
+              "userRequest": "./utils/isStatePlainEnough",
+              "loc": "6:0-60"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 4,
+          "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nimport isPlainObject from 'lodash-es/isPlainObject';\n\nexport default function isStatePlainEnough(a) {\n  // isPlainObject + duck type not immutable\n  if (!a) return false;\n  if ((typeof a === 'undefined' ? 'undefined' : _typeof(a)) !== 'object') return false;\n  if (typeof a.asMutable === 'function') return false;\n  if (!isPlainObject(a)) return false;\n  return true;\n}"
+        },
+        {
+          "id": "./node_modules/redux-persist/es/utils/setImmediate.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+          "name": "./~/redux-persist/es/utils/setImmediate.js",
+          "index": 19,
+          "index2": 14,
+          "size": 160,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "issuerId": "./node_modules/redux-persist/es/persistStore.js",
+          "issuerName": "./~/redux-persist/es/persistStore.js",
+          "profile": {
+            "factory": 19,
+            "building": 28
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+              "module": "./~/redux-persist/es/persistStore.js",
+              "moduleName": "./~/redux-persist/es/persistStore.js",
+              "type": "harmony import",
+              "userRequest": "./utils/setImmediate",
+              "loc": "6:0-48"
+            },
+            {
+              "moduleId": "./node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+              "module": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+              "moduleName": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+              "type": "harmony import",
+              "userRequest": "../utils/setImmediate",
+              "loc": "3:0-49"
+            }
+          ],
+          "usedExports": [
+            "default"
+          ],
+          "providedExports": [
+            "default"
+          ],
+          "depth": 4,
+          "source": "var setImmediate = typeof global !== 'undefined' && typeof global.setImmediate !== 'undefined' ? global.setImmediate : setTimeout;\n\nexport default setImmediate;"
+        },
+        {
+          "id": "./node_modules/webpack/buildin/global.js",
+          "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/webpack/buildin/global.js",
+          "name": "(webpack)/buildin/global.js",
+          "index": 11,
+          "index2": 1,
+          "size": 509,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+          "issuerId": "./node_modules/redux-persist/es/utils/setImmediate.js",
+          "issuerName": "./~/redux-persist/es/utils/setImmediate.js",
+          "profile": {
+            "factory": 10,
+            "building": 4
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": "./node_modules/redux-persist/es/utils/setImmediate.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+              "module": "./~/redux-persist/es/utils/setImmediate.js",
+              "moduleName": "./~/redux-persist/es/utils/setImmediate.js",
+              "type": "cjs require",
+              "userRequest": "global",
+              "loc": "1:0-47"
+            },
+            {
+              "moduleId": "./node_modules/lodash-es/_freeGlobal.js",
+              "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_freeGlobal.js",
+              "module": "./~/lodash-es/_freeGlobal.js",
+              "moduleName": "./~/lodash-es/_freeGlobal.js",
+              "type": "cjs require",
+              "userRequest": "global",
+              "loc": "1:0-41"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "depth": 5,
+          "source": "var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\treturn this;\r\n})();\r\n\r\ntry {\r\n\t// This works if eval is allowed (see CSP)\r\n\tg = g || Function(\"return this\")() || (1,eval)(\"this\");\r\n} catch(e) {\r\n\t// This works if the window reference is available\r\n\tif(typeof window === \"object\")\r\n\t\tg = window;\r\n}\r\n\r\n// g can still be undefined, but nothing to do about it...\r\n// We return undefined, instead of nothing here, so it's\r\n// easier to handle this case. if(!global) { ...}\r\n\r\nmodule.exports = g;\r\n"
         },
         {
           "id": "./src/index.js",
           "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/babel-loader/lib/index.js??ref--0!/Users/Richard.Tan/personal/file_sizes/src/index.js",
           "name": "./src/index.js",
           "index": 1,
-          "index2": 1,
-          "size": 302,
+          "index2": 23,
+          "size": 329,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -108,8 +1232,8 @@
           "issuerId": 0,
           "issuerName": "multi ./src/index.js",
           "profile": {
-            "factory": 30,
-            "building": 466
+            "factory": 28,
+            "building": 497
           },
           "failed": false,
           "errors": 0,
@@ -128,37 +1252,7 @@
           "usedExports": true,
           "providedExports": null,
           "depth": 1,
-          "source": "// import 'date-fns';\nimport 'form-serialize';\n// import 'jquery';\n// import 'react';\n// import 'ramda';\n// import 'classnames';\n// import 'moment';\n// import 'redux';\n// import 'react-redux';\n// import 'redux-saga';\n// import 'react-router';\n// import 'lodash';\n\n// // import map from 'ramda/src/map';"
-        },
-        {
-          "id": 0,
-          "identifier": "multi ./src/index.js",
-          "name": "multi ./src/index.js",
-          "index": 0,
-          "index2": 2,
-          "size": 28,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            0
-          ],
-          "assets": [],
-          "issuer": null,
-          "issuerId": null,
-          "issuerName": null,
-          "profile": {
-            "factory": 1,
-            "building": 0
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "reasons": [],
-          "usedExports": true,
-          "providedExports": null,
-          "depth": 0
+          "source": "// import 'date-fns';\n// import 'form-serialize';\n// import 'jquery';\n// import 'react';\n// import 'ramda';\n// import 'classnames';\n// import 'moment';\n// import 'redux';\nimport 'redux-persist';\n// import 'react-redux';\n// import 'redux-saga';\n// import 'react-router';\n// import 'lodash';\n\n// // import map from 'ramda/src/map';"
         }
       ],
       "filteredModules": 0,
@@ -177,12 +1271,880 @@
   ],
   "modules": [
     {
-      "id": "./node_modules/form-serialize/index.js",
-      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/form-serialize/index.js",
-      "name": "./~/form-serialize/index.js",
-      "index": 2,
+      "id": "./node_modules/json-stringify-safe/stringify.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/json-stringify-safe/stringify.js",
+      "name": "./~/json-stringify-safe/stringify.js",
+      "index": 21,
+      "index2": 17,
+      "size": 907,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+      "issuerId": "./node_modules/redux-persist/es/createPersistor.js",
+      "issuerName": "./~/redux-persist/es/createPersistor.js",
+      "profile": {
+        "factory": 53,
+        "building": 6
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "module": "./~/redux-persist/es/createPersistor.js",
+          "moduleName": "./~/redux-persist/es/createPersistor.js",
+          "type": "harmony import",
+          "userRequest": "json-stringify-safe",
+          "loc": "4:0-44"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": null,
+      "depth": 4,
+      "source": "exports = module.exports = stringify\nexports.getSerialize = serializer\n\nfunction stringify(obj, replacer, spaces, cycleReplacer) {\n  return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces)\n}\n\nfunction serializer(replacer, cycleReplacer) {\n  var stack = [], keys = []\n\n  if (cycleReplacer == null) cycleReplacer = function(key, value) {\n    if (stack[0] === value) return \"[Circular ~]\"\n    return \"[Circular ~.\" + keys.slice(0, stack.indexOf(value)).join(\".\") + \"]\"\n  }\n\n  return function(key, value) {\n    if (stack.length > 0) {\n      var thisPos = stack.indexOf(this)\n      ~thisPos ? stack.splice(thisPos + 1) : stack.push(this)\n      ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key)\n      if (~stack.indexOf(value)) value = cycleReplacer.call(this, key, value)\n    }\n    else stack.push(value)\n\n    return replacer == null ? value : replacer.call(this, key, value)\n  }\n}\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_Symbol.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+      "name": "./~/lodash-es/_Symbol.js",
+      "index": 8,
+      "index2": 4,
+      "size": 116,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+      "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+      "issuerName": "./~/lodash-es/_baseGetTag.js",
+      "profile": {
+        "factory": 6,
+        "building": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "module": "./~/lodash-es/_baseGetTag.js",
+          "moduleName": "./~/lodash-es/_baseGetTag.js",
+          "type": "harmony import",
+          "userRequest": "./_Symbol.js",
+          "loc": "1:0-34"
+        },
+        {
+          "moduleId": "./node_modules/lodash-es/_getRawTag.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getRawTag.js",
+          "module": "./~/lodash-es/_getRawTag.js",
+          "moduleName": "./~/lodash-es/_getRawTag.js",
+          "type": "harmony import",
+          "userRequest": "./_Symbol.js",
+          "loc": "1:0-34"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 7,
+      "source": "import root from './_root.js';\n\n/** Built-in value references. */\nvar Symbol = root.Symbol;\n\nexport default Symbol;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_baseGetTag.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+      "name": "./~/lodash-es/_baseGetTag.js",
+      "index": 7,
+      "index2": 7,
+      "size": 790,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+      "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+      "issuerName": "./~/lodash-es/isPlainObject.js",
+      "profile": {
+        "factory": 4,
+        "building": 4
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "module": "./~/lodash-es/isPlainObject.js",
+          "moduleName": "./~/lodash-es/isPlainObject.js",
+          "type": "harmony import",
+          "userRequest": "./_baseGetTag.js",
+          "loc": "1:0-42"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 6,
+      "source": "import Symbol from './_Symbol.js';\nimport getRawTag from './_getRawTag.js';\nimport objectToString from './_objectToString.js';\n\n/** `Object#toString` result references. */\nvar nullTag = '[object Null]',\n    undefinedTag = '[object Undefined]';\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * The base implementation of `getTag` without fallbacks for buggy environments.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the `toStringTag`.\n */\nfunction baseGetTag(value) {\n  if (value == null) {\n    return value === undefined ? undefinedTag : nullTag;\n  }\n  return (symToStringTag && symToStringTag in Object(value))\n    ? getRawTag(value)\n    : objectToString(value);\n}\n\nexport default baseGetTag;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_freeGlobal.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_freeGlobal.js",
+      "name": "./~/lodash-es/_freeGlobal.js",
+      "index": 10,
+      "index2": 2,
+      "size": 171,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+      "issuerId": "./node_modules/lodash-es/_root.js",
+      "issuerName": "./~/lodash-es/_root.js",
+      "profile": {
+        "factory": 2,
+        "building": 3,
+        "dependencies": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_root.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+          "module": "./~/lodash-es/_root.js",
+          "moduleName": "./~/lodash-es/_root.js",
+          "type": "harmony import",
+          "userRequest": "./_freeGlobal.js",
+          "loc": "1:0-42"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 9,
+      "source": "/** Detect free variable `global` from Node.js. */\nvar freeGlobal = typeof global == 'object' && global && global.Object === Object && global;\n\nexport default freeGlobal;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/isPlainObject.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+      "name": "./~/lodash-es/isPlainObject.js",
+      "index": 6,
+      "index2": 11,
+      "size": 1648,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+      "issuerId": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+      "issuerName": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+      "profile": {
+        "factory": 29,
+        "building": 4
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+          "module": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+          "moduleName": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+          "type": "harmony import",
+          "userRequest": "lodash-es/isPlainObject",
+          "loc": "3:0-52"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 5,
+      "source": "import baseGetTag from './_baseGetTag.js';\nimport getPrototype from './_getPrototype.js';\nimport isObjectLike from './isObjectLike.js';\n\n/** `Object#toString` result references. */\nvar objectTag = '[object Object]';\n\n/** Used for built-in method references. */\nvar funcProto = Function.prototype,\n    objectProto = Object.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/** Used to infer the `Object` constructor. */\nvar objectCtorString = funcToString.call(Object);\n\n/**\n * Checks if `value` is a plain object, that is, an object created by the\n * `Object` constructor or one with a `[[Prototype]]` of `null`.\n *\n * @static\n * @memberOf _\n * @since 0.8.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.\n * @example\n *\n * function Foo() {\n *   this.a = 1;\n * }\n *\n * _.isPlainObject(new Foo);\n * // => false\n *\n * _.isPlainObject([1, 2, 3]);\n * // => false\n *\n * _.isPlainObject({ 'x': 0, 'y': 0 });\n * // => true\n *\n * _.isPlainObject(Object.create(null));\n * // => true\n */\nfunction isPlainObject(value) {\n  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {\n    return false;\n  }\n  var proto = getPrototype(value);\n  if (proto === null) {\n    return true;\n  }\n  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;\n  return typeof Ctor == 'function' && Ctor instanceof Ctor &&\n    funcToString.call(Ctor) == objectCtorString;\n}\n\nexport default isPlainObject;\n"
+    },
+    {
+      "id": 0,
+      "identifier": "multi ./src/index.js",
+      "name": "multi ./src/index.js",
+      "index": 0,
+      "index2": 24,
+      "size": 28,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "profile": {
+        "factory": 0,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "depth": 0
+    },
+    {
+      "id": "./node_modules/lodash-es/_getPrototype.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+      "name": "./~/lodash-es/_getPrototype.js",
+      "index": 14,
+      "index2": 9,
+      "size": 161,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+      "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+      "issuerName": "./~/lodash-es/isPlainObject.js",
+      "profile": {
+        "factory": 5,
+        "building": 6
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "module": "./~/lodash-es/isPlainObject.js",
+          "moduleName": "./~/lodash-es/isPlainObject.js",
+          "type": "harmony import",
+          "userRequest": "./_getPrototype.js",
+          "loc": "2:0-46"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 6,
+      "source": "import overArg from './_overArg.js';\n\n/** Built-in value references. */\nvar getPrototype = overArg(Object.getPrototypeOf, Object);\n\nexport default getPrototype;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_getRawTag.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getRawTag.js",
+      "name": "./~/lodash-es/_getRawTag.js",
+      "index": 12,
+      "index2": 5,
+      "size": 1137,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+      "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+      "issuerName": "./~/lodash-es/_baseGetTag.js",
+      "profile": {
+        "factory": 6,
+        "building": 5,
+        "dependencies": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "module": "./~/lodash-es/_baseGetTag.js",
+          "moduleName": "./~/lodash-es/_baseGetTag.js",
+          "type": "harmony import",
+          "userRequest": "./_getRawTag.js",
+          "loc": "2:0-40"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 7,
+      "source": "import Symbol from './_Symbol.js';\n\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/** Built-in value references. */\nvar symToStringTag = Symbol ? Symbol.toStringTag : undefined;\n\n/**\n * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.\n *\n * @private\n * @param {*} value The value to query.\n * @returns {string} Returns the raw `toStringTag`.\n */\nfunction getRawTag(value) {\n  var isOwn = hasOwnProperty.call(value, symToStringTag),\n      tag = value[symToStringTag];\n\n  try {\n    value[symToStringTag] = undefined;\n    var unmasked = true;\n  } catch (e) {}\n\n  var result = nativeObjectToString.call(value);\n  if (unmasked) {\n    if (isOwn) {\n      value[symToStringTag] = tag;\n    } else {\n      delete value[symToStringTag];\n    }\n  }\n  return result;\n}\n\nexport default getRawTag;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_objectToString.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_objectToString.js",
+      "name": "./~/lodash-es/_objectToString.js",
+      "index": 13,
+      "index2": 6,
+      "size": 563,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+      "issuerId": "./node_modules/lodash-es/_baseGetTag.js",
+      "issuerName": "./~/lodash-es/_baseGetTag.js",
+      "profile": {
+        "factory": 6,
+        "building": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_baseGetTag.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_baseGetTag.js",
+          "module": "./~/lodash-es/_baseGetTag.js",
+          "moduleName": "./~/lodash-es/_baseGetTag.js",
+          "type": "harmony import",
+          "userRequest": "./_objectToString.js",
+          "loc": "3:0-50"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 7,
+      "source": "/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n\n/**\n * Used to resolve the\n * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)\n * of values.\n */\nvar nativeObjectToString = objectProto.toString;\n\n/**\n * Converts `value` to a string using `Object.prototype.toString`.\n *\n * @private\n * @param {*} value The value to convert.\n * @returns {string} Returns the converted string.\n */\nfunction objectToString(value) {\n  return nativeObjectToString.call(value);\n}\n\nexport default objectToString;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_overArg.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_overArg.js",
+      "name": "./~/lodash-es/_overArg.js",
+      "index": 15,
+      "index2": 8,
+      "size": 380,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+      "issuerId": "./node_modules/lodash-es/_getPrototype.js",
+      "issuerName": "./~/lodash-es/_getPrototype.js",
+      "profile": {
+        "factory": 4,
+        "building": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_getPrototype.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_getPrototype.js",
+          "module": "./~/lodash-es/_getPrototype.js",
+          "moduleName": "./~/lodash-es/_getPrototype.js",
+          "type": "harmony import",
+          "userRequest": "./_overArg.js",
+          "loc": "1:0-36"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 7,
+      "source": "/**\n * Creates a unary function that invokes `func` with its argument transformed.\n *\n * @private\n * @param {Function} func The function to wrap.\n * @param {Function} transform The argument transform.\n * @returns {Function} Returns the new function.\n */\nfunction overArg(func, transform) {\n  return function(arg) {\n    return func(transform(arg));\n  };\n}\n\nexport default overArg;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/_root.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_root.js",
+      "name": "./~/lodash-es/_root.js",
+      "index": 9,
+      "index2": 3,
+      "size": 298,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+      "issuerId": "./node_modules/lodash-es/_Symbol.js",
+      "issuerName": "./~/lodash-es/_Symbol.js",
+      "profile": {
+        "factory": 5,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/_Symbol.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_Symbol.js",
+          "module": "./~/lodash-es/_Symbol.js",
+          "moduleName": "./~/lodash-es/_Symbol.js",
+          "type": "harmony import",
+          "userRequest": "./_root.js",
+          "loc": "1:0-30"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 8,
+      "source": "import freeGlobal from './_freeGlobal.js';\n\n/** Detect free variable `self`. */\nvar freeSelf = typeof self == 'object' && self && self.Object === Object && self;\n\n/** Used as a reference to the global object. */\nvar root = freeGlobal || freeSelf || Function('return this')();\n\nexport default root;\n"
+    },
+    {
+      "id": "./node_modules/lodash-es/isObjectLike.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isObjectLike.js",
+      "name": "./~/lodash-es/isObjectLike.js",
+      "index": 16,
+      "index2": 10,
+      "size": 612,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+      "issuerId": "./node_modules/lodash-es/isPlainObject.js",
+      "issuerName": "./~/lodash-es/isPlainObject.js",
+      "profile": {
+        "factory": 6,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/lodash-es/isPlainObject.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/isPlainObject.js",
+          "module": "./~/lodash-es/isPlainObject.js",
+          "moduleName": "./~/lodash-es/isPlainObject.js",
+          "type": "harmony import",
+          "userRequest": "./isObjectLike.js",
+          "loc": "3:0-45"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 6,
+      "source": "/**\n * Checks if `value` is object-like. A value is object-like if it's not `null`\n * and has a `typeof` result of \"object\".\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is object-like, else `false`.\n * @example\n *\n * _.isObjectLike({});\n * // => true\n *\n * _.isObjectLike([1, 2, 3]);\n * // => true\n *\n * _.isObjectLike(_.noop);\n * // => false\n *\n * _.isObjectLike(null);\n * // => false\n */\nfunction isObjectLike(value) {\n  return value != null && typeof value == 'object';\n}\n\nexport default isObjectLike;\n"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/autoRehydrate.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+      "name": "./~/redux-persist/es/autoRehydrate.js",
+      "index": 3,
+      "index2": 13,
+      "size": 3580,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 8,
+        "building": 37,
+        "dependencies": 43
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./autoRehydrate",
+          "loc": "1:0-44"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { REHYDRATE } from './constants';\nimport isStatePlainEnough from './utils/isStatePlainEnough';\n\nexport default function autoRehydrate() {\n  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};\n\n  var stateReconciler = config.stateReconciler || defaultStateReconciler;\n\n  return function (next) {\n    return function (reducer, initialState, enhancer) {\n      var store = next(liftReducer(reducer), initialState, enhancer);\n      return _extends({}, store, {\n        replaceReducer: function replaceReducer(reducer) {\n          return store.replaceReducer(liftReducer(reducer));\n        }\n      });\n    };\n  };\n\n  function liftReducer(reducer) {\n    var rehydrated = false;\n    var preRehydrateActions = [];\n    return function (state, action) {\n      if (action.type !== REHYDRATE) {\n        if (config.log && !rehydrated) preRehydrateActions.push(action); // store pre-rehydrate actions for debugging\n        return reducer(state, action);\n      } else {\n        if (config.log && !rehydrated) logPreRehydrate(preRehydrateActions);\n        rehydrated = true;\n\n        var inboundState = action.payload;\n        var reducedState = reducer(state, action);\n\n        return stateReconciler(state, inboundState, reducedState, config.log);\n      }\n    };\n  }\n}\n\nfunction logPreRehydrate(preRehydrateActions) {\n  var concernedActions = preRehydrateActions.slice(1);\n  if (concernedActions.length > 0) {\n    console.log('\\n      redux-persist/autoRehydrate: %d actions were fired before rehydration completed. This can be a symptom of a race\\n      condition where the rehydrate action may overwrite the previously affected state. Consider running these actions\\n      after rehydration:\\n    ', concernedActions.length, concernedActions);\n  }\n}\n\nfunction defaultStateReconciler(state, inboundState, reducedState, log) {\n  var newState = _extends({}, reducedState);\n\n  Object.keys(inboundState).forEach(function (key) {\n    // if initialState does not have key, skip auto rehydration\n    if (!state.hasOwnProperty(key)) return;\n\n    // if initial state is an object but inbound state is null/undefined, skip\n    if (_typeof(state[key]) === 'object' && !inboundState[key]) {\n      if (log) console.log('redux-persist/autoRehydrate: sub state for key `%s` is falsy but initial state is an object, skipping autoRehydrate.', key);\n      return;\n    }\n\n    // if reducer modifies substate, skip auto rehydration\n    if (state[key] !== reducedState[key]) {\n      if (log) console.log('redux-persist/autoRehydrate: sub state for key `%s` modified, skipping autoRehydrate.', key);\n      newState[key] = reducedState[key];\n      return;\n    }\n\n    // otherwise take the inboundState\n    if (isStatePlainEnough(inboundState[key]) && isStatePlainEnough(state[key])) newState[key] = _extends({}, state[key], inboundState[key]); // shallow merge\n    else newState[key] = inboundState[key]; // hard set\n\n    if (log) console.log('redux-persist/autoRehydrate: key `%s`, rehydrated to ', key, newState[key]);\n  });\n  return newState;\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/constants.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/constants.js",
+      "name": "./~/redux-persist/es/constants.js",
+      "index": 4,
       "index2": 0,
-      "size": 8714,
+      "size": 84,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+      "issuerId": "./node_modules/redux-persist/es/getStoredState.js",
+      "issuerName": "./~/redux-persist/es/getStoredState.js",
+      "profile": {
+        "factory": 55,
+        "building": 10
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/getStoredState.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+          "module": "./~/redux-persist/es/getStoredState.js",
+          "moduleName": "./~/redux-persist/es/getStoredState.js",
+          "type": "harmony import",
+          "userRequest": "./constants",
+          "loc": "3:0-41"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/autoRehydrate.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+          "module": "./~/redux-persist/es/autoRehydrate.js",
+          "moduleName": "./~/redux-persist/es/autoRehydrate.js",
+          "type": "harmony import",
+          "userRequest": "./constants",
+          "loc": "5:0-40"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "module": "./~/redux-persist/es/createPersistor.js",
+          "moduleName": "./~/redux-persist/es/createPersistor.js",
+          "type": "harmony import",
+          "userRequest": "./constants",
+          "loc": "1:0-52"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "module": "./~/redux-persist/es/persistStore.js",
+          "moduleName": "./~/redux-persist/es/persistStore.js",
+          "type": "harmony import",
+          "userRequest": "./constants",
+          "loc": "3:0-40"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/purgeStoredState.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/purgeStoredState.js",
+          "module": "./~/redux-persist/es/purgeStoredState.js",
+          "moduleName": "./~/redux-persist/es/purgeStoredState.js",
+          "type": "harmony import",
+          "userRequest": "./constants",
+          "loc": "1:0-41"
+        }
+      ],
+      "usedExports": [
+        "KEY_PREFIX",
+        "REHYDRATE"
+      ],
+      "providedExports": [
+        "KEY_PREFIX",
+        "REHYDRATE"
+      ],
+      "depth": 4,
+      "source": "export var KEY_PREFIX = 'reduxPersist:';\nexport var REHYDRATE = 'persist/REHYDRATE';"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/createPersistor.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+      "name": "./~/redux-persist/es/createPersistor.js",
+      "index": 17,
+      "index2": 18,
+      "size": 4918,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 9,
+        "building": 61,
+        "dependencies": 22
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./createPersistor",
+          "loc": "2:0-48"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "module": "./~/redux-persist/es/persistStore.js",
+          "moduleName": "./~/redux-persist/es/persistStore.js",
+          "type": "harmony import",
+          "userRequest": "./createPersistor",
+          "loc": "5:0-48"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "import { KEY_PREFIX, REHYDRATE } from './constants';\nimport createAsyncLocalStorage from './defaults/asyncLocalStorage';\nimport purgeStoredState from './purgeStoredState';\nimport stringify from 'json-stringify-safe';\n\nexport default function createPersistor(store, config) {\n  // defaults\n  var serializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultSerializer;\n  var deserializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultDeserializer;\n  var blacklist = config.blacklist || [];\n  var whitelist = config.whitelist || false;\n  var transforms = config.transforms || [];\n  var debounce = config.debounce || false;\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // pluggable state shape (e.g. immutablejs)\n  var stateInit = config._stateInit || {};\n  var stateIterator = config._stateIterator || defaultStateIterator;\n  var stateGetter = config._stateGetter || defaultStateGetter;\n  var stateSetter = config._stateSetter || defaultStateSetter;\n\n  // storage with keys -> getAllKeys for localForage support\n  var storage = config.storage || createAsyncLocalStorage('local');\n  if (storage.keys && !storage.getAllKeys) {\n    storage.getAllKeys = storage.keys;\n  }\n\n  // initialize stateful values\n  var lastState = stateInit;\n  var paused = false;\n  var storesToProcess = [];\n  var timeIterator = null;\n\n  store.subscribe(function () {\n    if (paused) return;\n\n    var state = store.getState();\n\n    stateIterator(state, function (subState, key) {\n      if (!passWhitelistBlacklist(key)) return;\n      if (stateGetter(lastState, key) === stateGetter(state, key)) return;\n      if (storesToProcess.indexOf(key) !== -1) return;\n      storesToProcess.push(key);\n    });\n\n    // time iterator (read: debounce)\n    if (timeIterator === null) {\n      timeIterator = setInterval(function () {\n        if (storesToProcess.length === 0) {\n          clearInterval(timeIterator);\n          timeIterator = null;\n          return;\n        }\n\n        var key = storesToProcess.shift();\n        var storageKey = createStorageKey(key);\n        var endState = transforms.reduce(function (subState, transformer) {\n          return transformer.in(subState, key);\n        }, stateGetter(store.getState(), key));\n        if (typeof endState !== 'undefined') storage.setItem(storageKey, serializer(endState), warnIfSetError(key));\n      }, debounce);\n    }\n\n    lastState = state;\n  });\n\n  function passWhitelistBlacklist(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return false;\n    if (blacklist.indexOf(key) !== -1) return false;\n    return true;\n  }\n\n  function adhocRehydrate(incoming) {\n    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n\n    var state = {};\n    if (options.serial) {\n      stateIterator(incoming, function (subState, key) {\n        try {\n          var data = deserializer(subState);\n          var value = transforms.reduceRight(function (interState, transformer) {\n            return transformer.out(interState, key);\n          }, data);\n          state = stateSetter(state, key, value);\n        } catch (err) {\n          if (process.env.NODE_ENV !== 'production') console.warn('Error rehydrating data for key \"' + key + '\"', subState, err);\n        }\n      });\n    } else state = incoming;\n\n    store.dispatch(rehydrateAction(state));\n    return state;\n  }\n\n  function createStorageKey(key) {\n    return '' + keyPrefix + key;\n  }\n\n  // return `persistor`\n  return {\n    rehydrate: adhocRehydrate,\n    pause: function pause() {\n      paused = true;\n    },\n    resume: function resume() {\n      paused = false;\n    },\n    purge: function purge(keys) {\n      return purgeStoredState({ storage: storage, keyPrefix: keyPrefix }, keys);\n    }\n  };\n}\n\nfunction warnIfSetError(key) {\n  return function setError(err) {\n    if (err && process.env.NODE_ENV !== 'production') {\n      console.warn('Error storing data for key:', key, err);\n    }\n  };\n}\n\nfunction defaultSerializer(data) {\n  return stringify(data, null, null, function (k, v) {\n    if (process.env.NODE_ENV !== 'production') return null;\n    throw new Error('\\n      redux-persist: cannot process cyclical state.\\n      Consider changing your state structure to have no cycles.\\n      Alternatively blacklist the corresponding reducer key.\\n      Cycle encounted at key \"' + k + '\" with value \"' + v + '\".\\n    ');\n  });\n}\n\nfunction defaultDeserializer(serial) {\n  return JSON.parse(serial);\n}\n\nfunction rehydrateAction(data) {\n  return {\n    type: REHYDRATE,\n    payload: data\n  };\n}\n\nfunction defaultStateIterator(collection, callback) {\n  return Object.keys(collection).forEach(function (key) {\n    return callback(collection[key], key);\n  });\n}\n\nfunction defaultStateGetter(state, key) {\n  return state[key];\n}\n\nfunction defaultStateSetter(state, key, value) {\n  state[key] = value;\n  return state;\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/createTransform.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createTransform.js",
+      "name": "./~/redux-persist/es/createTransform.js",
+      "index": 22,
+      "index2": 19,
+      "size": 724,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 9,
+        "building": 63
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./createTransform",
+          "loc": "3:0-48"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "function createTransform(inbound, outbound) {\n  var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};\n\n  var whitelist = config.whitelist || null;\n  var blacklist = config.blacklist || null;\n\n  function whitelistBlacklistCheck(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return true;\n    if (blacklist && blacklist.indexOf(key) !== -1) return true;\n    return false;\n  }\n\n  return {\n    in: function _in(state, key) {\n      return !whitelistBlacklistCheck(key) && inbound ? inbound(state, key) : state;\n    },\n    out: function out(state, key) {\n      return !whitelistBlacklistCheck(key) && outbound ? outbound(state, key) : state;\n    }\n  };\n}\n\nexport default createTransform;"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+      "name": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+      "index": 18,
+      "index2": 15,
+      "size": 3459,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+      "issuerId": "./node_modules/redux-persist/es/getStoredState.js",
+      "issuerName": "./~/redux-persist/es/getStoredState.js",
+      "profile": {
+        "factory": 59,
+        "building": 27,
+        "dependencies": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/getStoredState.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+          "module": "./~/redux-persist/es/getStoredState.js",
+          "moduleName": "./~/redux-persist/es/getStoredState.js",
+          "type": "harmony import",
+          "userRequest": "./defaults/asyncLocalStorage",
+          "loc": "4:0-67"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "module": "./~/redux-persist/es/createPersistor.js",
+          "moduleName": "./~/redux-persist/es/createPersistor.js",
+          "type": "harmony import",
+          "userRequest": "./defaults/asyncLocalStorage",
+          "loc": "2:0-67"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 4,
+      "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nimport setImmediate from '../utils/setImmediate';\n\nvar noStorage = function noStorage() {\n  /* noop */return null;\n};\nif (process.env.NODE_ENV !== 'production') {\n  noStorage = function noStorage() {\n    console.error('redux-persist asyncLocalStorage requires a global localStorage object. Either use a different storage backend or if this is a universal redux application you probably should conditionally persist like so: https://gist.github.com/rt2zz/ac9eb396793f95ff3c3b');\n    return null;\n  };\n}\n\nfunction _hasStorage(storageType) {\n  if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) !== 'object' || !(storageType in window)) {\n    return false;\n  }\n\n  try {\n    var storage = window[storageType];\n    var testKey = 'redux-persist ' + storageType + ' test';\n    storage.setItem(testKey, 'test');\n    storage.getItem(testKey);\n    storage.removeItem(testKey);\n  } catch (e) {\n    if (process.env.NODE_ENV !== 'production') console.warn('redux-persist ' + storageType + ' test failed, persistence will be disabled.');\n    return false;\n  }\n  return true;\n}\n\nfunction hasLocalStorage() {\n  return _hasStorage('localStorage');\n}\n\nfunction hasSessionStorage() {\n  return _hasStorage('sessionStorage');\n}\n\nfunction getStorage(type) {\n  if (type === 'local') {\n    return hasLocalStorage() ? window.localStorage : { getItem: noStorage, setItem: noStorage, removeItem: noStorage, getAllKeys: noStorage };\n  }\n  if (type === 'session') {\n    return hasSessionStorage() ? window.sessionStorage : { getItem: noStorage, setItem: noStorage, removeItem: noStorage, getAllKeys: noStorage };\n  }\n}\n\nexport default function (type, config) {\n  var storage = getStorage(type);\n  return {\n    getAllKeys: function getAllKeys(cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          var keys = [];\n          for (var i = 0; i < storage.length; i++) {\n            keys.push(storage.key(i));\n          }\n          setImmediate(function () {\n            cb && cb(null, keys);\n            resolve(keys);\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    getItem: function getItem(key, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          var s = storage.getItem(key);\n          setImmediate(function () {\n            cb && cb(null, s);\n            resolve(s);\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    setItem: function setItem(key, string, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          storage.setItem(key, string);\n          setImmediate(function () {\n            cb && cb(null);\n            resolve();\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    },\n    removeItem: function removeItem(key, cb) {\n      return new Promise(function (resolve, reject) {\n        try {\n          storage.removeItem(key);\n          setImmediate(function () {\n            cb && cb(null);\n            resolve();\n          });\n        } catch (e) {\n          cb && cb(e);\n          reject(e);\n        }\n      });\n    }\n  };\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/getStoredState.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/getStoredState.js",
+      "name": "./~/redux-persist/es/getStoredState.js",
+      "index": 23,
+      "index2": 20,
+      "size": 3163,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 10,
+        "building": 23
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./getStoredState",
+          "loc": "4:0-46"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "module": "./~/redux-persist/es/persistStore.js",
+          "moduleName": "./~/redux-persist/es/persistStore.js",
+          "type": "harmony import",
+          "userRequest": "./getStoredState",
+          "loc": "4:0-46"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { KEY_PREFIX } from './constants';\nimport createAsyncLocalStorage from './defaults/asyncLocalStorage';\n\nexport default function getStoredState(config, onComplete) {\n  var storage = config.storage || createAsyncLocalStorage('local');\n  var deserializer = config.serialize === false ? function (data) {\n    return data;\n  } : defaultDeserializer;\n  var blacklist = config.blacklist || [];\n  var whitelist = config.whitelist || false;\n  var transforms = config.transforms || [];\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // fallback getAllKeys to `keys` if present (LocalForage compatability)\n  if (storage.keys && !storage.getAllKeys) storage = _extends({}, storage, { getAllKeys: storage.keys });\n\n  var restoredState = {};\n  var completionCount = 0;\n\n  storage.getAllKeys(function (err, allKeys) {\n    if (err) {\n      if (process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error in storage.getAllKeys');\n      complete(err);\n    }\n\n    var persistKeys = allKeys.filter(function (key) {\n      return key.indexOf(keyPrefix) === 0;\n    }).map(function (key) {\n      return key.slice(keyPrefix.length);\n    });\n    var keysToRestore = persistKeys.filter(passWhitelistBlacklist);\n\n    var restoreCount = keysToRestore.length;\n    if (restoreCount === 0) complete(null, restoredState);\n    keysToRestore.forEach(function (key) {\n      storage.getItem(createStorageKey(key), function (err, serialized) {\n        if (err && process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error restoring data for key:', key, err);else restoredState[key] = rehydrate(key, serialized);\n        completionCount += 1;\n        if (completionCount === restoreCount) complete(null, restoredState);\n      });\n    });\n  });\n\n  function rehydrate(key, serialized) {\n    var state = null;\n\n    try {\n      var data = deserializer(serialized);\n      state = transforms.reduceRight(function (subState, transformer) {\n        return transformer.out(subState, key);\n      }, data);\n    } catch (err) {\n      if (process.env.NODE_ENV !== 'production') console.warn('redux-persist/getStoredState: Error restoring data for key:', key, err);\n    }\n\n    return state;\n  }\n\n  function complete(err, restoredState) {\n    onComplete(err, restoredState);\n  }\n\n  function passWhitelistBlacklist(key) {\n    if (whitelist && whitelist.indexOf(key) === -1) return false;\n    if (blacklist.indexOf(key) !== -1) return false;\n    return true;\n  }\n\n  function createStorageKey(key) {\n    return '' + keyPrefix + key;\n  }\n\n  if (typeof onComplete !== 'function' && !!Promise) {\n    return new Promise(function (resolve, reject) {\n      onComplete = function onComplete(err, restoredState) {\n        if (err) reject(err);else resolve(restoredState);\n      };\n    });\n  }\n}\n\nfunction defaultDeserializer(serial) {\n  return JSON.parse(serial);\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/index.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "name": "./~/redux-persist/es/index.js",
+      "index": 2,
+      "index2": 22,
+      "size": 978,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -195,8 +2157,8 @@
       "issuerId": "./src/index.js",
       "issuerName": "./src/index.js",
       "profile": {
-        "factory": 9,
-        "building": 25
+        "factory": 15,
+        "building": 26
       },
       "failed": false,
       "errors": 0,
@@ -208,22 +2170,278 @@
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
           "type": "harmony import",
-          "userRequest": "form-serialize",
-          "loc": "2:0-24"
+          "userRequest": "redux-persist",
+          "loc": "9:0-23"
         }
       ],
       "usedExports": false,
-      "providedExports": null,
+      "providedExports": [
+        "autoRehydrate",
+        "createPersistor",
+        "createTransform",
+        "getStoredState",
+        "persistStore",
+        "purgeStoredState",
+        "storages"
+      ],
       "depth": 2,
-      "source": "// get successful control from form and assemble into object\n// http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2\n\n// types which indicate a submit action and are not successful controls\n// these will be ignored\nvar k_r_submitter = /^(?:submit|button|image|reset|file)$/i;\n\n// node names which could be successful controls\nvar k_r_success_contrls = /^(?:input|select|textarea|keygen)/i;\n\n// Matches bracket notation.\nvar brackets = /(\\[[^\\[\\]]*\\])/g;\n\n// serializes form fields\n// @param form MUST be an HTMLForm element\n// @param options is an optional argument to configure the serialization. Default output\n// with no options specified is a url encoded string\n//    - hash: [true | false] Configure the output type. If true, the output will\n//    be a js object.\n//    - serializer: [function] Optional serializer function to override the default one.\n//    The function takes 3 arguments (result, key, value) and should return new result\n//    hash and url encoded str serializers are provided with this module\n//    - disabled: [true | false]. If true serialize disabled fields.\n//    - empty: [true | false]. If true serialize empty fields\nfunction serialize(form, options) {\n    if (typeof options != 'object') {\n        options = { hash: !!options };\n    }\n    else if (options.hash === undefined) {\n        options.hash = true;\n    }\n\n    var result = (options.hash) ? {} : '';\n    var serializer = options.serializer || ((options.hash) ? hash_serializer : str_serialize);\n\n    var elements = form && form.elements ? form.elements : [];\n\n    //Object store each radio and set if it's empty or not\n    var radio_store = Object.create(null);\n\n    for (var i=0 ; i<elements.length ; ++i) {\n        var element = elements[i];\n\n        // ingore disabled fields\n        if ((!options.disabled && element.disabled) || !element.name) {\n            continue;\n        }\n        // ignore anyhting that is not considered a success field\n        if (!k_r_success_contrls.test(element.nodeName) ||\n            k_r_submitter.test(element.type)) {\n            continue;\n        }\n\n        var key = element.name;\n        var val = element.value;\n\n        // we can't just use element.value for checkboxes cause some browsers lie to us\n        // they say \"on\" for value when the box isn't checked\n        if ((element.type === 'checkbox' || element.type === 'radio') && !element.checked) {\n            val = undefined;\n        }\n\n        // If we want empty elements\n        if (options.empty) {\n            // for checkbox\n            if (element.type === 'checkbox' && !element.checked) {\n                val = '';\n            }\n\n            // for radio\n            if (element.type === 'radio') {\n                if (!radio_store[element.name] && !element.checked) {\n                    radio_store[element.name] = false;\n                }\n                else if (element.checked) {\n                    radio_store[element.name] = true;\n                }\n            }\n\n            // if options empty is true, continue only if its radio\n            if (val == undefined && element.type == 'radio') {\n                continue;\n            }\n        }\n        else {\n            // value-less fields are ignored unless options.empty is true\n            if (!val) {\n                continue;\n            }\n        }\n\n        // multi select boxes\n        if (element.type === 'select-multiple') {\n            val = [];\n\n            var selectOptions = element.options;\n            var isSelectedOptions = false;\n            for (var j=0 ; j<selectOptions.length ; ++j) {\n                var option = selectOptions[j];\n                var allowedEmpty = options.empty && !option.value;\n                var hasValue = (option.value || allowedEmpty);\n                if (option.selected && hasValue) {\n                    isSelectedOptions = true;\n\n                    // If using a hash serializer be sure to add the\n                    // correct notation for an array in the multi-select\n                    // context. Here the name attribute on the select element\n                    // might be missing the trailing bracket pair. Both names\n                    // \"foo\" and \"foo[]\" should be arrays.\n                    if (options.hash && key.slice(key.length - 2) !== '[]') {\n                        result = serializer(result, key + '[]', option.value);\n                    }\n                    else {\n                        result = serializer(result, key, option.value);\n                    }\n                }\n            }\n\n            // Serialize if no selected options and options.empty is true\n            if (!isSelectedOptions && options.empty) {\n                result = serializer(result, key, '');\n            }\n\n            continue;\n        }\n\n        result = serializer(result, key, val);\n    }\n\n    // Check for all empty radio buttons and serialize them with key=\"\"\n    if (options.empty) {\n        for (var key in radio_store) {\n            if (!radio_store[key]) {\n                result = serializer(result, key, '');\n            }\n        }\n    }\n\n    return result;\n}\n\nfunction parse_keys(string) {\n    var keys = [];\n    var prefix = /^([^\\[\\]]*)/;\n    var children = new RegExp(brackets);\n    var match = prefix.exec(string);\n\n    if (match[1]) {\n        keys.push(match[1]);\n    }\n\n    while ((match = children.exec(string)) !== null) {\n        keys.push(match[1]);\n    }\n\n    return keys;\n}\n\nfunction hash_assign(result, keys, value) {\n    if (keys.length === 0) {\n        result = value;\n        return result;\n    }\n\n    var key = keys.shift();\n    var between = key.match(/^\\[(.+?)\\]$/);\n\n    if (key === '[]') {\n        result = result || [];\n\n        if (Array.isArray(result)) {\n            result.push(hash_assign(null, keys, value));\n        }\n        else {\n            // This might be the result of bad name attributes like \"[][foo]\",\n            // in this case the original `result` object will already be\n            // assigned to an object literal. Rather than coerce the object to\n            // an array, or cause an exception the attribute \"_values\" is\n            // assigned as an array.\n            result._values = result._values || [];\n            result._values.push(hash_assign(null, keys, value));\n        }\n\n        return result;\n    }\n\n    // Key is an attribute name and can be assigned directly.\n    if (!between) {\n        result[key] = hash_assign(result[key], keys, value);\n    }\n    else {\n        var string = between[1];\n        // +var converts the variable into a number\n        // better than parseInt because it doesn't truncate away trailing\n        // letters and actually fails if whole thing is not a number\n        var index = +string;\n\n        // If the characters between the brackets is not a number it is an\n        // attribute name and can be assigned directly.\n        if (isNaN(index)) {\n            result = result || {};\n            result[string] = hash_assign(result[string], keys, value);\n        }\n        else {\n            result = result || [];\n            result[index] = hash_assign(result[index], keys, value);\n        }\n    }\n\n    return result;\n}\n\n// Object/hash encoding serializer.\nfunction hash_serializer(result, key, value) {\n    var matches = key.match(brackets);\n\n    // Has brackets? Use the recursive assignment function to walk the keys,\n    // construct any missing objects in the result tree and make the assignment\n    // at the end of the chain.\n    if (matches) {\n        var keys = parse_keys(key);\n        hash_assign(result, keys, value);\n    }\n    else {\n        // Non bracket notation can make assignments directly.\n        var existing = result[key];\n\n        // If the value has been assigned already (for instance when a radio and\n        // a checkbox have the same name attribute) convert the previous value\n        // into an array before pushing into it.\n        //\n        // NOTE: If this requirement were removed all hash creation and\n        // assignment could go through `hash_assign`.\n        if (existing) {\n            if (!Array.isArray(existing)) {\n                result[key] = [ existing ];\n            }\n\n            result[key].push(value);\n        }\n        else {\n            result[key] = value;\n        }\n    }\n\n    return result;\n}\n\n// urlform encoding serializer\nfunction str_serialize(result, key, value) {\n    // encode newlines as \\r\\n cause the html spec says so\n    value = value.replace(/(\\r)?\\n/g, '\\r\\n');\n    value = encodeURIComponent(value);\n\n    // spaces should be '+' rather than '%20'.\n    value = value.replace(/%20/g, '+');\n    return result + (result ? '&' : '') + encodeURIComponent(key) + '=' + value;\n}\n\nmodule.exports = serialize;\n"
+      "source": "import autoRehydrate from './autoRehydrate';\nimport createPersistor from './createPersistor';\nimport createTransform from './createTransform';\nimport getStoredState from './getStoredState';\nimport persistStore from './persistStore';\nimport purgeStoredState from './purgeStoredState';\n\n// @TODO remove in v5\nvar deprecated = function deprecated(cb, cb2, cb3) {\n  console.error('redux-persist: this method of importing storages has been removed. instead use `import { asyncLocalStorage } from \"redux-persist/storages\"`');\n  if (typeof cb === 'function') cb();\n  if (typeof cb2 === 'function') cb2();\n  if (typeof cb3 === 'function') cb3();\n};\nvar deprecatedStorage = { getAllKeys: deprecated, getItem: deprecated, setItem: deprecated, removeItem: deprecated };\nvar storages = {\n  asyncLocalStorage: deprecatedStorage,\n  asyncSessionStorage: deprecatedStorage\n};\n\nexport { autoRehydrate, createPersistor, createTransform, getStoredState, persistStore, purgeStoredState, storages };"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/persistStore.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+      "name": "./~/redux-persist/es/persistStore.js",
+      "index": 24,
+      "index2": 21,
+      "size": 2092,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 10,
+        "building": 65,
+        "dependencies": 13
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./persistStore",
+          "loc": "5:0-42"
+        }
+      ],
+      "usedExports": false,
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nimport { REHYDRATE } from './constants';\nimport getStoredState from './getStoredState';\nimport createPersistor from './createPersistor';\nimport setImmediate from './utils/setImmediate';\n\nexport default function persistStore(store) {\n  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n  var onComplete = arguments[2];\n\n  // defaults\n  // @TODO remove shouldRestore\n  var shouldRestore = !config.skipRestore;\n  if (process.env.NODE_ENV !== 'production' && config.skipRestore) console.warn('redux-persist: config.skipRestore has been deprecated. If you want to skip restoration use `createPersistor` instead');\n\n  var purgeKeys = null;\n\n  // create and pause persistor\n  var persistor = createPersistor(store, config);\n  persistor.pause();\n\n  // restore\n  if (shouldRestore) {\n    setImmediate(function () {\n      getStoredState(config, function (err, restoredState) {\n        if (err) {\n          complete(err);\n          return;\n        }\n        // do not persist state for purgeKeys\n        if (purgeKeys) {\n          if (purgeKeys === '*') restoredState = {};else purgeKeys.forEach(function (key) {\n            return delete restoredState[key];\n          });\n        }\n\n        store.dispatch(rehydrateAction(restoredState, err));\n        complete(err, restoredState);\n      });\n    });\n  } else setImmediate(complete);\n\n  function complete(err, restoredState) {\n    persistor.resume();\n    onComplete && onComplete(err, restoredState);\n  }\n\n  return _extends({}, persistor, {\n    purge: function purge(keys) {\n      purgeKeys = keys || '*';\n      return persistor.purge(keys);\n    }\n  });\n}\n\nfunction rehydrateAction(payload) {\n  var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;\n\n  return {\n    type: REHYDRATE,\n    payload: payload,\n    error: error\n  };\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/purgeStoredState.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/purgeStoredState.js",
+      "name": "./~/redux-persist/es/purgeStoredState.js",
+      "index": 20,
+      "index2": 16,
+      "size": 1540,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+      "issuerId": "./node_modules/redux-persist/es/index.js",
+      "issuerName": "./~/redux-persist/es/index.js",
+      "profile": {
+        "factory": 11,
+        "building": 72,
+        "dependencies": 5
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/index.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/index.js",
+          "module": "./~/redux-persist/es/index.js",
+          "moduleName": "./~/redux-persist/es/index.js",
+          "type": "harmony import",
+          "userRequest": "./purgeStoredState",
+          "loc": "6:0-50"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/createPersistor.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/createPersistor.js",
+          "module": "./~/redux-persist/es/createPersistor.js",
+          "moduleName": "./~/redux-persist/es/createPersistor.js",
+          "type": "harmony import",
+          "userRequest": "./purgeStoredState",
+          "loc": "3:0-50"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 3,
+      "source": "import { KEY_PREFIX } from './constants';\n\nexport default function purgeStoredState(config, keys) {\n  var storage = config.storage;\n  var keyPrefix = config.keyPrefix !== undefined ? config.keyPrefix : KEY_PREFIX;\n\n  // basic validation\n  if (Array.isArray(config)) throw new Error('redux-persist: purgeStoredState requires config as a first argument (found array). An array of keys is the optional second argument.');\n  if (!storage) throw new Error('redux-persist: config.storage required in purgeStoredState');\n\n  if (typeof keys === 'undefined') {\n    // if keys is not defined, purge all keys\n    return new Promise(function (resolve, reject) {\n      storage.getAllKeys(function (err, allKeys) {\n        if (err) {\n          if (process.env.NODE_ENV !== 'production') console.warn('redux-persist: error during purgeStoredState in storage.getAllKeys');\n          reject(err);\n        } else {\n          resolve(purgeStoredState(config, allKeys.filter(function (key) {\n            return key.indexOf(keyPrefix) === 0;\n          }).map(function (key) {\n            return key.slice(keyPrefix.length);\n          })));\n        }\n      });\n    });\n  } else {\n    // otherwise purge specified keys\n    return Promise.all(keys.map(function (key) {\n      return storage.removeItem('' + keyPrefix + key, warnIfRemoveError(key));\n    }));\n  }\n}\n\nfunction warnIfRemoveError(key) {\n  return function removeError(err) {\n    if (err && process.env.NODE_ENV !== 'production') {\n      console.warn('Error storing data for key:', key, err);\n    }\n  };\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/isStatePlainEnough.js",
+      "name": "./~/redux-persist/es/utils/isStatePlainEnough.js",
+      "index": 5,
+      "index2": 12,
+      "size": 640,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+      "issuerId": "./node_modules/redux-persist/es/autoRehydrate.js",
+      "issuerName": "./~/redux-persist/es/autoRehydrate.js",
+      "profile": {
+        "factory": 48,
+        "building": 7
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/autoRehydrate.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/autoRehydrate.js",
+          "module": "./~/redux-persist/es/autoRehydrate.js",
+          "moduleName": "./~/redux-persist/es/autoRehydrate.js",
+          "type": "harmony import",
+          "userRequest": "./utils/isStatePlainEnough",
+          "loc": "6:0-60"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 4,
+      "source": "var _typeof = typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; };\n\nimport isPlainObject from 'lodash-es/isPlainObject';\n\nexport default function isStatePlainEnough(a) {\n  // isPlainObject + duck type not immutable\n  if (!a) return false;\n  if ((typeof a === 'undefined' ? 'undefined' : _typeof(a)) !== 'object') return false;\n  if (typeof a.asMutable === 'function') return false;\n  if (!isPlainObject(a)) return false;\n  return true;\n}"
+    },
+    {
+      "id": "./node_modules/redux-persist/es/utils/setImmediate.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+      "name": "./~/redux-persist/es/utils/setImmediate.js",
+      "index": 19,
+      "index2": 14,
+      "size": 160,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+      "issuerId": "./node_modules/redux-persist/es/persistStore.js",
+      "issuerName": "./~/redux-persist/es/persistStore.js",
+      "profile": {
+        "factory": 19,
+        "building": 28
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/persistStore.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/persistStore.js",
+          "module": "./~/redux-persist/es/persistStore.js",
+          "moduleName": "./~/redux-persist/es/persistStore.js",
+          "type": "harmony import",
+          "userRequest": "./utils/setImmediate",
+          "loc": "6:0-48"
+        },
+        {
+          "moduleId": "./node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/defaults/asyncLocalStorage.js",
+          "module": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+          "moduleName": "./~/redux-persist/es/defaults/asyncLocalStorage.js",
+          "type": "harmony import",
+          "userRequest": "../utils/setImmediate",
+          "loc": "3:0-49"
+        }
+      ],
+      "usedExports": [
+        "default"
+      ],
+      "providedExports": [
+        "default"
+      ],
+      "depth": 4,
+      "source": "var setImmediate = typeof global !== 'undefined' && typeof global.setImmediate !== 'undefined' ? global.setImmediate : setTimeout;\n\nexport default setImmediate;"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/global.js",
+      "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/webpack/buildin/global.js",
+      "name": "(webpack)/buildin/global.js",
+      "index": 11,
+      "index2": 1,
+      "size": 509,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+      "issuerId": "./node_modules/redux-persist/es/utils/setImmediate.js",
+      "issuerName": "./~/redux-persist/es/utils/setImmediate.js",
+      "profile": {
+        "factory": 10,
+        "building": 4
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": "./node_modules/redux-persist/es/utils/setImmediate.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/redux-persist/es/utils/setImmediate.js",
+          "module": "./~/redux-persist/es/utils/setImmediate.js",
+          "moduleName": "./~/redux-persist/es/utils/setImmediate.js",
+          "type": "cjs require",
+          "userRequest": "global",
+          "loc": "1:0-47"
+        },
+        {
+          "moduleId": "./node_modules/lodash-es/_freeGlobal.js",
+          "moduleIdentifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/lodash-es/_freeGlobal.js",
+          "module": "./~/lodash-es/_freeGlobal.js",
+          "moduleName": "./~/lodash-es/_freeGlobal.js",
+          "type": "cjs require",
+          "userRequest": "global",
+          "loc": "1:0-41"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "depth": 5,
+      "source": "var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\treturn this;\r\n})();\r\n\r\ntry {\r\n\t// This works if eval is allowed (see CSP)\r\n\tg = g || Function(\"return this\")() || (1,eval)(\"this\");\r\n} catch(e) {\r\n\t// This works if the window reference is available\r\n\tif(typeof window === \"object\")\r\n\t\tg = window;\r\n}\r\n\r\n// g can still be undefined, but nothing to do about it...\r\n// We return undefined, instead of nothing here, so it's\r\n// easier to handle this case. if(!global) { ...}\r\n\r\nmodule.exports = g;\r\n"
     },
     {
       "id": "./src/index.js",
       "identifier": "/Users/Richard.Tan/personal/file_sizes/node_modules/babel-loader/lib/index.js??ref--0!/Users/Richard.Tan/personal/file_sizes/src/index.js",
       "name": "./src/index.js",
       "index": 1,
-      "index2": 1,
-      "size": 302,
+      "index2": 23,
+      "size": 329,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -236,8 +2454,8 @@
       "issuerId": 0,
       "issuerName": "multi ./src/index.js",
       "profile": {
-        "factory": 30,
-        "building": 466
+        "factory": 28,
+        "building": 497
       },
       "failed": false,
       "errors": 0,
@@ -256,39 +2474,11 @@
       "usedExports": true,
       "providedExports": null,
       "depth": 1,
-      "source": "// import 'date-fns';\nimport 'form-serialize';\n// import 'jquery';\n// import 'react';\n// import 'ramda';\n// import 'classnames';\n// import 'moment';\n// import 'redux';\n// import 'react-redux';\n// import 'redux-saga';\n// import 'react-router';\n// import 'lodash';\n\n// // import map from 'ramda/src/map';"
-    },
-    {
-      "id": 0,
-      "identifier": "multi ./src/index.js",
-      "name": "multi ./src/index.js",
-      "index": 0,
-      "index2": 2,
-      "size": 28,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        0
-      ],
-      "assets": [],
-      "issuer": null,
-      "issuerId": null,
-      "issuerName": null,
-      "profile": {
-        "factory": 1,
-        "building": 0
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "reasons": [],
-      "usedExports": true,
-      "providedExports": null,
-      "depth": 0
+      "source": "// import 'date-fns';\n// import 'form-serialize';\n// import 'jquery';\n// import 'react';\n// import 'ramda';\n// import 'classnames';\n// import 'moment';\n// import 'redux';\nimport 'redux-persist';\n// import 'react-redux';\n// import 'redux-saga';\n// import 'react-router';\n// import 'lodash';\n\n// // import map from 'ramda/src/map';"
     }
   ],
   "filteredModules": 0,
   "children": []
 }
+Webpack Bundle Analyzer is started at http://127.0.0.1:8888
+Use Ctrl+C to close it

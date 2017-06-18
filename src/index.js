@@ -1,11 +1,12 @@
 // import 'date-fns';
-import 'form-serialize';
+// import 'form-serialize';
 // import 'jquery';
 // import 'react';
 // import 'ramda';
 // import 'classnames';
 // import 'moment';
 // import 'redux';
+import 'redux-persist';
 // import 'react-redux';
 // import 'redux-saga';
 // import 'react-router';

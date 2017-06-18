@@ -77,5 +77,10 @@ Without removing locales: 285.32kb
 
 ---
 
+### redux-persist v4.8.0
+16.6kb
+
+---
+
 ### redux-saga v0.15.3
 48.63kb
