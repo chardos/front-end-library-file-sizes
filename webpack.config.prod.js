@@ -2,7 +2,6 @@
 var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -42,7 +41,7 @@ module.exports = {
         },
         {
           test: /\.(css|scss)$/,
-        //   exclude: /node_modules/,
+          exclude: /node_modules/,
           use: [{
               loader: "style-loader" // creates style nodes from JS strings
           }, {
@@ -73,13 +72,17 @@ module.exports = {
         'process.env.NODE_ENV': '"production"',
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin({
-        reportFilename: 'report.html',
-        statsFilename: 'stats.json'
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false,
+            screw_ie8: true,
+        },
     }),
-    new UglifyJSPlugin({
-        comments: false
+    new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: true,
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
     // new ExtractTextPlugin({
     //   filename: 'style.css',
     //   allChunks: true

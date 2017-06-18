@@ -5,7 +5,7 @@
 // import 'ramda';
 // import 'classnames';
 // import 'moment';
-import 'preact';
+// import 'preact';
 // import 'redux';
 // import 'redux-persist';
 // import 'react-redux';
@@ -14,3 +14,7 @@ import 'preact';
 // import 'lodash';
 
 // // import map from 'ramda/src/map';
+
+const hey = () => {
+    console.log('yo');
+}
