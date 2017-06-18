@@ -5,6 +5,11 @@ All sizes are after minifying and gzipping.
 
 ---
 
+### date-fns v1.28.5
+85.33kb
+
+---
+
 ### jQuery v3.2.1
 202.96kb
 
